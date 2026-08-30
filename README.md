@@ -51,7 +51,8 @@ Interessenten tragen Kontaktdaten + gewünschte Menge ein und werden informiert,
 
 Das Formular (`#vorbestellen`) läuft im **E-Mail-Modus** (kein Server nötig): Beim Absenden
 öffnet sich eine vorbefüllte E-Mail an die Adresse aus `data-mailto` (aktuell
-`vorbestellung@fridl.info` – bitte auf eine echte Adresse ändern).
+`service@fridl.shop` – echtes Hostinger-Postfach, seit 30.08.2026 live, mit Weiterleitung
+an `witt@hinsch-voelckers.de`). Dieselbe Adresse steht auch in Impressum und Datenschutzerklärung.
 
 **Für automatische Erfassung (empfohlen für Live-Betrieb)** – zwei Wege:
 - **Statisch/Formspree:** Konto bei [formspree.io](https://formspree.io) anlegen, Form-ID holen
@@ -65,8 +66,9 @@ Das Formular (`#vorbestellen`) läuft im **E-Mail-Modus** (kein Server nötig): 
 - [ ] **Vorbestell-Ziel:** `data-mailto` auf echte Adresse setzen bzw. `data-endpoint` (Formspree) hinterlegen.
 - [ ] **Shop-Links (später):** Sobald bestellbar – Abschnitt „Bald im Handel" auf echte Amazon-/eBay-Buttons umstellen.
 - [x] **Produktfotos:** Vorher/Nachher-Boxen (`.ba-card`) nutzen Fotos aus dem Flyer-PDF. Hero-Bild ist seit 30.08.2026 ein KI-Rendering (`ChatGPT Image 29. Aug. 2026, 21_38_38.png` in `FRIDL OptiTren Pro/`) des echten Schraubverschluss-Tiegels statt des ursprünglichen Flyer-Eimers mit Henkel – zeigt jetzt korrekt die tatsächliche Verpackungsform. `.product-photo` läuft seither als Vollbild (`object-fit:cover`) statt freigestelltes Objekt.
-- [ ] **Drittes Video:** 2 von 3 angekündigten Videos sind eingebunden (`videos/fridl-produkt-in-aktion.mp4`, `videos/fridl-test-lackierte-flaeche.mp4`). Die Karte „Anleitung zur Verarbeitung" ist noch Platzhalter – drittes Video folgt.
-- [ ] **Videos auf YouTube:** Sobald Kanal steht, alle 3 Videos zusätzlich dort hochladen und auf YouTube-Embeds umstellen (aktuell selbst gehostete `<video>`-Tags).
+- [x] **Video-Anzeige-Bug behoben (30.08.2026):** `.video-frame` nutzte `display:grid;place-items:center`, wodurch das Portrait-Video (`fridl-produkt-in-aktion.mp4`, 576×1024) nicht gestreckt, sondern in Originalgröße zentriert und vom `overflow:hidden`-Rahmen oben abgeschnitten wurde (nur ein Ausschnitt sichtbar). Fix: `.video-frame.has-video { display:block; }`, dadurch greift `object-fit:contain` korrekt und zeigt das komplette Video (mit Letterboxing links/rechts).
+- [ ] **Drittes Video:** Nur 2 von 3 angekündigten Videos sind eingebunden. Die Platzhalter-Karte für das dritte Video („Anleitung zur Verarbeitung") wurde auf Wunsch entfernt – Grid läuft aktuell zweispaltig (`.videos-2`). Sobald das dritte Video da ist: dritte `<article class="video-card">` wieder ergänzen und `.videos-2`-Klasse vom Grid entfernen.
+- [ ] **Videos auf YouTube:** Sobald Kanal steht, Videos zusätzlich dort hochladen und auf YouTube-Embeds umstellen (aktuell selbst gehostete `<video>`-Tags).
 - [ ] **YouTube-Kanal:** Kanal anlegen, dann `id="youtubeChannelLink"` (Footer) und `id="youtubeChannelBtn"` (Video-Sektion) von `href="#"` auf die echte Kanal-URL setzen.
 - [ ] **Impressum:** Alle `[…]`-Felder (Geschäftsführer, HRB, USt-IdNr., Mail, Telefon) ausfüllen.
 - [ ] **Datenschutz:** `[…]`-Felder ausfüllen (Hoster-Adresse, Mail); Vorbestell-Formular/Formspree ergänzen. Formular erfasst jetzt zusätzlich ein `newsletter`-Feld (Checkbox „Produktneuigkeiten per E-Mail") – in der Datenschutzerklärung erwähnen.

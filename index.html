@@ -220,6 +220,7 @@
   .video-sec .section-head h2 { color:#fff; }
   .video-sec .section-head p { color: rgba(255,255,255,.75); }
   .videos-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:1.6rem; margin-top:2.5rem; }
+  .videos-2 { grid-template-columns: repeat(2,1fr); max-width:800px; margin-inline:auto; }
   .video-card h3 { color:#fff; font-size:1.05rem; margin:1rem 0 .4rem; }
   .video-card p { color:rgba(255,255,255,.7); font-size:.92rem; }
   .video-frame {
@@ -227,6 +228,7 @@
     background: repeating-linear-gradient(45deg,#13203a,#13203a 18px,#172545 18px,#172545 36px);
     border:1px solid rgba(255,255,255,.14); display:grid; place-items:center;
   }
+  .video-frame.has-video { display:block; }
   .video-frame .play {
     width:78px; height:78px; border-radius:50%; background:var(--orange);
     display:grid; place-items:center; box-shadow: 0 12px 30px -8px rgba(231,100,31,.7);
@@ -458,7 +460,7 @@
     <div class="preorder-card reveal">
       <!-- data-endpoint leer = E-Mail-Modus (kein Server nötig). Für automatische Erfassung
            hier eine Formspree-URL o.ä. eintragen ODER in WordPress ein Formular-Plugin nutzen. -->
-      <form id="preorderForm" data-endpoint="" data-mailto="vorbestellung@fridl.info" novalidate>
+      <form id="preorderForm" data-endpoint="" data-mailto="service@fridl.shop" novalidate>
         <div class="form-row">
           <div class="field">
             <label for="pf-name">Name <span class="req">*</span></label>
@@ -626,9 +628,8 @@
       <span class="eyebrow" style="color:var(--orange-2)">Profi-Tipp</span>
       <h2 class="display">Sehen Sie FRIDL<br>in Aktion</h2>
       <p>Kurze Videos zeigen, wie einfach und effektiv FRIDL PU-Schaum Antihaft wirkt – auftragen, arbeiten, abwischen. Alle Videos gibt es auch auf unserem YouTube-Kanal.</p>
-      <span class="placeholder-tag">2 von 3 Videos eingebunden – drittes folgt</span>
     </div>
-    <div class="videos-3">
+    <div class="videos-3 videos-2">
       <article class="video-card reveal">
         <div class="video-frame has-video">
           <video controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:contain;background:#000;">
@@ -637,13 +638,6 @@
         </div>
         <h3>Produkt in Aktion</h3>
         <p>FRIDL im Einsatz: PU-Schaum wird aufgetragen, angehaftet abgewartet und rückstandslos vom Brett gelöst.</p>
-      </article>
-      <article class="video-card reveal">
-        <div class="video-frame" role="img" aria-label="Video-Platzhalter: Anleitung zur Verarbeitung">
-          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <h3>Anleitung zur Verarbeitung</h3>
-        <p>Schritt für Schritt: mit dem Pinsel auftragen, PU-Schaum verwenden, mit nassem Schwamm entfernen.</p>
       </article>
       <article class="video-card reveal">
         <div class="video-frame has-video">
