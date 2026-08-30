@@ -426,7 +426,7 @@
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20c-5 0-8-4-8-9 6 0 9 3 9 9zM13 20c5 0 8-4 8-12-7 0-11 4-11 12"/></svg>
-      Lösemittelfrei, keine Chemie
+      Lösemittelfrei
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
@@ -434,11 +434,11 @@
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v7M10 10.5V6a2 2 0 0 0-4 0v8c0 3.5 2.5 7 6.5 7h1c3 0 5-1.5 6-4l1.5-4a1.8 1.8 0 0 0-3.3-1.5L18 13"/></svg>
-      Hautfreundlich &amp; handfreundlich
+      Hautfreundlich &amp; umweltfreundlich
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4a16 16 0 0 1 16 16C10.06 20 4 13.94 4 4Z"/><path d="M4 4c0 6 3 12 9 15"/></svg>
-      Biologisch abbaubar
+      Grüner Punkt
     </div>
   </div>
 </div>
@@ -458,9 +458,10 @@
     </div>
 
     <div class="preorder-card reveal">
-      <!-- data-endpoint leer = E-Mail-Modus (kein Server nötig). Für automatische Erfassung
-           hier eine Formspree-URL o.ä. eintragen ODER in WordPress ein Formular-Plugin nutzen. -->
-      <form id="preorderForm" data-endpoint="" data-mailto="service@fridl.shop" novalidate>
+      <!-- data-endpoint = send-preorder.php: sendet serverseitig sofort eine Benachrichtigung an
+           service@fridl.shop (siehe send-preorder.php). data-endpoint leeren, um zurück in den
+           reinen Mailto-Modus zu wechseln (kein Server nötig, aber abhängig vom Mail-Client des Kunden). -->
+      <form id="preorderForm" data-endpoint="send-preorder.php" data-mailto="service@fridl.shop" novalidate>
         <div class="form-row">
           <div class="field">
             <label for="pf-name">Name <span class="req">*</span></label>
@@ -522,23 +523,23 @@
     <div class="section-head reveal">
       <span class="eyebrow">Einfache Anwendung</span>
       <h2 class="display">In drei Schritten<br>zur sauberen Oberfläche</h2>
-      <p>Vorher auftragen, Schaum verwenden, mit einem nassen Schwamm abwischen – fertig.</p>
+      <p>Auftragen, PU-Schaum verwenden, ausgehärteten Schaum abheben und Rückstände abwischen – fertig.</p>
     </div>
     <div class="steps">
       <article class="step reveal">
         <div class="num">1</div>
         <h3>Auftragen</h3>
-        <p>Vor der Verwendung von PU-Schaum dünn auf die zu schützende Oberfläche auftragen – z. B. mit Pinsel oder Tuch.</p>
+        <p>Vor der Verwendung von PU-Schaum dünn auf die zu schützende Oberfläche auftragen – z. B. mit einem Flachpinsel.</p>
       </article>
       <article class="step reveal">
         <div class="num">2</div>
         <h3>PU-Schaum verwenden</h3>
-        <p>Montageschaum wie gewohnt auftragen. Keine Anhaftung auf der behandelten Oberfläche.</p>
+        <p>PU-Schaum wie gewohnt aufbringen. Keine Anhaftung auf der vorbehandelten Oberfläche.</p>
       </article>
       <article class="step reveal">
         <div class="num">3</div>
         <h3>Entfernen</h3>
-        <p>Nach Gebrauch mit einem nassen Schwamm abwischen. Fertig. Sauber. Rückstandslos.</p>
+        <p>Ausgehärteten PU-Schaum an den gewünschten Stellen z. B. mit einem Cuttermesser abtrennen und einfach von der Oberfläche abheben. Danach die FRIDL-Rückstände mit einem nassen Schwamm abwischen – fertig.</p>
       </article>
     </div>
   </div>
@@ -558,11 +559,12 @@
       <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10l2 7-7 11-7-11z"/></svg><span>Kunststoff</span></div>
       <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg><span>Glas</span></div>
       <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V6l8-3 8 3v14M4 12h16"/></svg><span>Marmor</span></div>
-      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 19l3-9 4 3 3-6 4 12z"/></svg><span>Stein</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 19l3-9 4 3 3-6 4 12z"/></svg><span>Stein, Klinker</span></div>
       <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h18M3 16h18M9 3v18M15 3v18"/></svg><span>Keramik</span></div>
       <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="8" width="10" height="13" rx="1.5"/><path d="M9.5 8V5a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 14.5 5v3M5.5 5h1.2M5.5 3h2.2"/></svg><span>Sprühlack*</span></div>
     </div>
     <p style="margin-top:1.2rem;font-size:.82rem;color:rgba(255,255,255,.55);">* Als Abklebe-Alternative: Fläche vor dem Sprühen mit FRIDL bestreichen – ausgewählter Sprühlack haftet dort nicht und lässt sich rückstandslos entfernen. Verträglichkeit vorab an unauffälliger Stelle testen.</p>
+    <p style="margin-top:.5rem;font-size:.82rem;color:rgba(255,255,255,.55);">Holz: gehobelt, unbehandelt oder mit Vorstrich. Eine spätere Weiterverarbeitung – z. B. Lackieren – wird durch FRIDL nach dem Abwaschen und Austrocknen der Oberfläche nicht behindert.</p>
   </div>
 </section>
 
@@ -598,22 +600,23 @@
       <span class="eyebrow">Ihre Vorteile</span>
       <h2 class="display" style="color:var(--navy);font-size:clamp(1.9rem,4vw,3rem);margin:.5rem 0 1.6rem;">Warum FRIDL Antihaft?</h2>
       <ul class="benefit-list">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Verhindert zuverlässig das Anhaften von PU-Montageschaum</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Verhindert zuverlässig das Anhaften von PU-Schaum</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Rückstandslos entfernbar – spart Zeit und Aufwand</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Lösemittelfrei, keine Chemie</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Hautfreundlich und handfreundlich – einfach mit dem Pinsel aufzutragen</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Lösemittelfrei</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Hautfreundlich und umweltfreundlich</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Materialschonend und sicher in der Anwendung</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Auch als Abklebe-Alternative bei Sprühlack einsetzbar – verhindert das Anhaften</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Biologisch abbaubar</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Grüner Punkt – recycelbare Verpackung</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Für professionelle Anwendungen im Handwerk und Bau</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>100% in Deutschland entwickelt &amp; produziert</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Praxisbeispiel Fenstersanierung 80×100 cm: nur 4–5 Minuten Gesamtaufwand</li>
       </ul>
     </div>
     <aside class="desc-card reveal">
       <h3>Produktbeschreibung</h3>
-      <p>FRIDL PU-Schaum Antihaft ist ein speziell entwickeltes Trennmittel zur Vermeidung von Anhaftungen durch PU-Montageschaum auf verschiedenen Oberflächen wie Holz, Metall, Kunststoff, Glas, Marmor, Stein und Keramik. Auch als Alternative zum Abkleben einsetzbar: Vor dem Sprühen aufgetragen, verhindert FRIDL zuverlässig, dass ausgewählte Sprühlacke an der behandelten Stelle anhaften.</p>
-      <p>Ideal für Türeinbau, Zargenmontage, Fenstermontage, Trockenbauarbeiten, Formenbau sowie Renovierungs- und Heimwerkerprojekte – für Profi-Handwerker (Tischler, Trockenbauer, Zimmerer, Maurer, SHK-Installateure) ebenso wie für Heimwerker, die regelmäßig mit Montageschaum arbeiten. Hautfreundlich und handfreundlich in der Anwendung – einfach mit dem Pinsel aufzutragen, ganz ohne Aufwand.</p>
-      <p>Biologisch abbaubar. 100% in Deutschland entwickelt &amp; produziert.</p>
+      <p>FRIDL PU-Schaum Antihaft ist ein speziell entwickeltes Trennmittel zur Vermeidung von Anhaftungen durch PU-Schaum auf verschiedenen Oberflächen wie Holz, Metall, Kunststoff, Glas, Marmor, Stein und Keramik. Auch als Alternative zum Abkleben einsetzbar: Vor dem Sprühen aufgetragen, verhindert FRIDL zuverlässig, dass ausgewählte Sprühlacke an der behandelten Stelle anhaften.</p>
+      <p>Ideal für Türeinbau, Zargenmontage, Fenstermontage, Trockenbauarbeiten, Formenbau sowie Renovierungs- und Heimwerkerprojekte – für Profi-Handwerker (Tischler, Trockenbauer, Zimmerer, Maurer, SHK-Installateure) ebenso wie für Heimwerker, die regelmäßig mit PU-Schaum arbeiten. Hautfreundlich und umweltfreundlich in der Anwendung – einfach mit dem Pinsel aufzutragen.</p>
+      <p>Grüner Punkt. 100% in Deutschland entwickelt &amp; produziert.</p>
       <div class="maker">
         <b>Inhalt:</b> 250 ml &nbsp;·&nbsp; <b>Hersteller:</b> Burck &amp; Witt UG, Am Strande 48, 23730 Sierksdorf
       </div>
@@ -692,8 +695,8 @@
     <div class="faq">
       <details class="faq-item reveal"><summary>Auf welchen Oberflächen kann ich FRIDL Antihaft verwenden?</summary><p>Auf Holz, Metall, Kunststoff, Glas, Marmor, Stein und Keramik. Ideal im Fensterbau, bei der Türmontage und im Innenausbau.</p></details>
       <details class="faq-item reveal"><summary>Funktioniert FRIDL auch bei Sprühlack?</summary><p>Ja. FRIDL eignet sich auch als Alternative zum Abkleben: Tragen Sie FRIDL auf die Fläche auf, auf der der Lack nicht haften soll, und sprühen Sie wie gewohnt. Der Lack haftet auf der behandelten Stelle nicht an und lässt sich rückstandslos entfernen. Da sich Sprühlacke stark unterscheiden, empfehlen wir, die Verträglichkeit vorab an einer unauffälligen Stelle zu testen.</p></details>
-      <details class="faq-item reveal"><summary>Wie wird das Mittel angewendet?</summary><p>Vor dem Schäumen dünn mit Pinsel oder Tuch auf die zu schützende Fläche auftragen. Nach dem Arbeiten einfach mit einem nassen Schwamm rückstandslos abwischen.</p></details>
-      <details class="faq-item reveal"><summary>Enthält FRIDL Antihaft Lösemittel?</summary><p>Nein. FRIDL PU-Schaum Antihaft ist lösemittelfrei, hautfreundlich, materialschonend, biologisch abbaubar und sicher in der Anwendung.</p></details>
+      <details class="faq-item reveal"><summary>Wie wird das Mittel angewendet?</summary><p>Vor dem Schäumen dünn mit einem Flachpinsel auf die zu schützende Fläche auftragen. Nach dem Aushärten den PU-Schaum an den gewünschten Stellen z. B. mit einem Cuttermesser abtrennen und von der Oberfläche abheben. Danach die FRIDL-Rückstände einfach mit einem nassen Schwamm abwischen.</p></details>
+      <details class="faq-item reveal"><summary>Enthält FRIDL Antihaft Lösemittel?</summary><p>Nein. FRIDL PU-Schaum Antihaft ist lösemittelfrei, hautfreundlich, umweltfreundlich, materialschonend und sicher in der Anwendung.</p></details>
       <details class="faq-item reveal"><summary>Wie groß ist die Verpackung?</summary><p>Die Dose enthält 250 ml. Hersteller: Burck &amp; Witt UG, Am Strande 48, 23730 Sierksdorf – entwickelt und produziert in Deutschland.</p></details>
       <details class="faq-item reveal"><summary>Wo kann ich FRIDL Antihaft kaufen?</summary><p>Über unsere Shop-Partner (Amazon / eBay) – die Bestell-Buttons finden Sie im Abschnitt „Jetzt kaufen".</p></details>
       <details class="faq-item reveal"><summary>Wie erfahre ich von Produktneuigkeiten und der Verfügbarkeit?</summary><p>Im Vorbestell-Formular können Sie die Checkbox „Produktneuigkeiten per E-Mail" aktivieren – dann informieren wir Sie zusätzlich über Neuigkeiten, Verfügbarkeit und Angebote.</p></details>
