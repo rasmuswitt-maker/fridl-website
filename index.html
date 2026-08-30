@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FRIDL PU-Schaum Antihaft – Damit nichts kleben bleibt | Made in Germany</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<meta name="description" content="FRIDL PU-Schaum Antihaft: Das lösemittelfreie Profi-Trennmittel gegen PU-Schaum-Anhaftungen. Rückstandslos entfernbar, hautfreundlich, für Holz, Metall, Glas, Stein u. v. m. Entwickelt und produziert in Deutschland." />
+<meta property="og:title" content="FRIDL PU-Schaum Antihaft – Damit nichts kleben bleibt" />
+<meta property="og:description" content="Das lösemittelfreie, hautfreundliche Profi-Trennmittel gegen PU-Schaum-Anhaftungen. Entwickelt und produziert in Deutschland." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy:      #16243c;
+    --navy-2:    #1f3252;
+    --navy-deep: #0f1a2c;
+    --orange:    #e7641f;
+    --orange-2:  #ff7d36;
+    --paper:     #f5f2ec;
+    --paper-2:   #ffffff;
+    --ink:       #16243c;
+    --muted:     #5d6b80;
+    --line:      rgba(22, 36, 60, 0.12);
+    --ok:        #1f9d55;
+    --shadow:    0 18px 50px -20px rgba(15, 26, 44, 0.45);
+    --radius:    18px;
+    --maxw:      1180px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 { line-height: 1.02; }
+  .display {
+    font-family: 'Anton', 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(100% - 40px, var(--maxw)); margin-inline: auto; }
+  .eyebrow {
+    font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--orange);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-weight: 800; font-size: 1rem; letter-spacing: 0.01em;
+    padding: 0.95em 1.6em; border-radius: 999px;
+    border: 2px solid transparent; cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space: nowrap;
+  }
+  .btn svg { width: 1.2em; height: 1.2em; }
+  .btn-primary { background: var(--orange); color: #fff; box-shadow: 0 10px 24px -10px rgba(231,100,31,.8); }
+  .btn-primary:hover { transform: translateY(-2px); background: var(--orange-2); box-shadow: 0 16px 30px -12px rgba(231,100,31,.9); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: rgba(22,36,60,.22); }
+  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--navy); }
+  .btn-dark { background: var(--navy); color: #fff; }
+  .btn-dark:hover { transform: translateY(-2px); background: var(--navy-2); }
+
+  .placeholder-tag {
+    display: inline-block; font-size: .68rem; font-weight: 800; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--orange);
+    background: rgba(231,100,31,.1); border: 1px dashed rgba(231,100,31,.5);
+    padding: .25em .6em; border-radius: 6px; margin-top: .5rem;
+  }
+
+  /* ---------- Header ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245,242,236,.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { display: flex; align-items: center; gap: .55rem; }
+  .logo-img { height: 46px; width: auto; display: block; }
+  .logo .mark { font-family: 'Anton', sans-serif; font-size: 1.7rem; letter-spacing: .04em; color: var(--navy); }
+  .logo .mark .r { color: var(--orange); }
+  .logo .swoosh { width: 42px; height: 14px; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; font-weight: 600; font-size: .95rem; }
+  .nav-links a { color: var(--navy); opacity: .8; transition: opacity .15s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { display: flex; align-items: center; gap: 1rem; }
+  .burger { display: none; background: none; border: 0; cursor: pointer; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(231,100,31,.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(31,50,82,.08), transparent 55%),
+      var(--paper);
+    padding: clamp(3rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .hero h1 {
+    font-size: clamp(2.6rem, 6.2vw, 5rem); color: var(--navy);
+    margin: 1rem 0 1.2rem;
+  }
+  .hero h1 .dot { color: var(--orange); }
+  .hero p.lead { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--muted); max-width: 30ch; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; align-items: center; }
+  .price-flag {
+    display: inline-flex; flex-direction: column; line-height: 1.1;
+    background: var(--navy); color: #fff; padding: .6rem 1.1rem; border-radius: 14px;
+  }
+  .price-flag .amt { font-family:'Anton',sans-serif; font-size: 1.5rem; }
+  .price-flag .sub { font-size: .68rem; opacity: .75; font-weight: 600; }
+  .intro-badge {
+    display: inline-block; align-self:flex-start; font-size: .62rem; font-weight: 800; letter-spacing: .08em;
+    text-transform: uppercase; background: rgba(255,255,255,.18); padding: .2em .55em;
+    border-radius: 999px; margin-bottom: .3rem;
+  }
+  .was-price { font-family:'Hanken Grotesk',sans-serif; font-weight: 600; opacity: .6; text-decoration: line-through; margin-left: .4rem; }
+  .price-flag .was-price { font-size: .9rem; }
+
+  /* hero visual */
+  .hero-visual { position: relative; }
+  .product-stage {
+    position: relative; aspect-ratio: 1/1; border-radius: 24px;
+    border: 1px solid var(--line); box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .product-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  .badge-float {
+    position:absolute; z-index:2; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:.6rem .9rem; box-shadow: var(--shadow);
+    font-weight:800; font-size:.8rem; display:flex; align-items:center; gap:.5rem;
+  }
+  .badge-float .ic{width:20px;height:20px;color:var(--orange);}
+  .badge-de { top: 8%; left: -6%; }
+  .badge-eco { bottom: 12%; right: -6%; }
+
+  /* ---------- Trust bar ---------- */
+  .trustbar { background: var(--navy); color:#fff; }
+  .trustbar .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.2rem; padding: 1.2rem 0; }
+  .trust-item { display:flex; align-items:center; gap:.65rem; font-weight:700; font-size:.92rem; }
+  .trust-item svg { width:26px; height:26px; color: var(--orange-2); flex:none; }
+
+  /* ---------- Section base ---------- */
+  section.block { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+  .section-head { max-width: 60ch; margin-bottom: 2.5rem; }
+  .section-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); color: var(--navy); margin:.5rem 0 .8rem; }
+  .section-head p { color: var(--muted); font-size: 1.08rem; }
+
+  /* ---------- Steps ---------- */
+  .steps { display:grid; grid-template-columns: repeat(3,1fr); gap:1.4rem; }
+  .step {
+    background: var(--paper-2); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 2rem 1.6rem; position:relative; overflow:hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .step .num {
+    font-family:'Anton',sans-serif; font-size: 3.4rem; color: var(--orange);
+    line-height:1; opacity:.9;
+  }
+  .step h3 { font-size: 1.25rem; color:var(--navy); margin:.6rem 0 .5rem; }
+  .step p { color: var(--muted); font-size:.98rem; }
+  .step::after { content:""; position:absolute; right:-30px; bottom:-30px; width:120px; height:120px; border-radius:50%; background: radial-gradient(circle, rgba(231,100,31,.08), transparent 70%); }
+
+  /* ---------- Surfaces ---------- */
+  .surfaces-sec { background:var(--navy); color:#fff; }
+  .surfaces-sec .section-head h2 { color:#fff; }
+  .surfaces-sec .section-head p { color: rgba(255,255,255,.7); }
+  .surfaces { display:grid; grid-template-columns: repeat(4,1fr); gap:.9rem; }
+  .surface {
+    background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12);
+    border-radius:14px; padding:1.2rem .6rem; text-align:center;
+    transition: background .2s, transform .2s; cursor:default;
+  }
+  .surface:hover { background: rgba(231,100,31,.18); transform: translateY(-3px); border-color: var(--orange); }
+  .surface svg { width:30px; height:30px; color:var(--orange-2); margin-bottom:.5rem; }
+  .surface span { display:block; font-weight:700; font-size:.82rem; letter-spacing:.02em; }
+
+  /* ---------- Before / After ---------- */
+  .ba-grid { display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem; }
+  .ba-card { border-radius: var(--radius); overflow:hidden; position:relative; aspect-ratio: 4/3; border:1px solid var(--line); }
+  .ba-card .ph { position:absolute; inset:0; display:grid; align-items:end; justify-items:center; background-size:cover; background-position:center; }
+  .ba-tag { position:absolute; top:1rem; left:1rem; z-index:2; font-weight:800; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; padding:.4em .8em; border-radius:8px; }
+  .ba-before .ba-tag { background:#3b4760; color:#fff; }
+  .ba-after .ba-tag { background:var(--orange); color:#fff; }
+  .ba-note { font-weight:700; width:100%; text-align:center; color:#fff; padding:2.5rem 1rem 1rem; background:linear-gradient(0deg, rgba(15,26,44,.75), transparent); }
+
+  /* ---------- Benefits ---------- */
+  .benefits-grid { display:grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem,5vw,4rem); align-items:start; }
+  .benefit-list { list-style:none; display:grid; gap:1rem; }
+  .benefit-list li { display:flex; gap:.9rem; align-items:flex-start; font-size:1.05rem; font-weight:600; color:var(--navy); }
+  .benefit-list .check {
+    flex:none; width:28px; height:28px; border-radius:50%; background:var(--ok);
+    display:grid; place-items:center; margin-top:.1rem;
+  }
+  .benefit-list .check svg { width:16px; height:16px; color:#fff; }
+  .desc-card {
+    background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius);
+    padding: 2rem; box-shadow: var(--shadow);
+  }
+  .desc-card h3 { color:var(--navy); font-size:1.3rem; margin-bottom:.8rem; }
+  .desc-card p { color:var(--muted); margin-bottom:1rem; }
+  .maker { font-size:.85rem; color:var(--muted); border-top:1px solid var(--line); padding-top:1rem; }
+  .maker b { color:var(--navy); }
+
+  /* ---------- Video ---------- */
+  .video-sec { background: linear-gradient(160deg,#0f1a2c,#1f3252); color:#fff; }
+  .video-sec .section-head h2 { color:#fff; }
+  .video-sec .section-head p { color: rgba(255,255,255,.75); }
+  .videos-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:1.6rem; margin-top:2.5rem; }
+  .video-card h3 { color:#fff; font-size:1.05rem; margin:1rem 0 .4rem; }
+  .video-card p { color:rgba(255,255,255,.7); font-size:.92rem; }
+  .video-frame {
+    position:relative; aspect-ratio:16/9; border-radius:var(--radius); overflow:hidden;
+    background: repeating-linear-gradient(45deg,#13203a,#13203a 18px,#172545 18px,#172545 36px);
+    border:1px solid rgba(255,255,255,.14); display:grid; place-items:center;
+  }
+  .video-frame .play {
+    width:78px; height:78px; border-radius:50%; background:var(--orange);
+    display:grid; place-items:center; box-shadow: 0 12px 30px -8px rgba(231,100,31,.7);
+    transition: transform .2s;
+  }
+  .video-frame:hover .play { transform: scale(1.08); }
+  .video-frame .play svg { width:30px; height:30px; color:#fff; margin-left:4px; }
+
+  /* ---------- Buy CTA ---------- */
+  .buy-sec { background: var(--paper); }
+  .buy-card {
+    background: linear-gradient(135deg, var(--orange), #ff8a45);
+    border-radius: 28px; padding: clamp(2rem,5vw,3.5rem);
+    color:#fff; display:grid; grid-template-columns: 1fr auto; gap:2rem; align-items:center;
+    box-shadow: 0 30px 60px -25px rgba(231,100,31,.7); position:relative; overflow:hidden;
+  }
+  .buy-card::before { content:""; position:absolute; right:-60px; top:-60px; width:260px; height:260px; border-radius:50%; background:rgba(255,255,255,.12); }
+  .buy-card h2 { font-size: clamp(1.8rem,3.6vw,2.6rem); margin-bottom:.6rem; }
+  .buy-card p { opacity:.92; max-width:46ch; }
+  .buy-price { text-align:center; }
+  .buy-price .big { font-family:'Anton',sans-serif; font-size: clamp(2.6rem,6vw,3.8rem); line-height:1; }
+  .buy-price .big .was-price { font-size: clamp(1.1rem,2.4vw,1.5rem); }
+  .buy-price .vat { font-size:.85rem; opacity:.9; }
+  .buy-actions { display:flex; flex-direction:column; gap:.8rem; margin-top:1.4rem; }
+  .buy-actions .btn { justify-content:center; }
+  .btn-amazon { background:#ff9900; color:#0f1a2c; }
+  .btn-amazon:hover { background:#ffad33; }
+  .btn-ebay { background:#fff; color:var(--navy); }
+  .btn-ebay:hover { background:#f1ede5; }
+
+  /* ---------- Vorbestellung ---------- */
+  .preorder-sec { background: linear-gradient(180deg, var(--paper), #fff); }
+  .preorder-grid { display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
+  .badge-soon { display:inline-flex; align-items:center; gap:.5rem; font-weight:800; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--orange); background:rgba(231,100,31,.1); padding:.45em .9em; border-radius:999px; }
+  .preorder-info h2 { font-size:clamp(1.9rem,4vw,2.8rem); color:var(--navy); margin:1.1rem 0 .8rem; }
+  .preorder-info p { color:var(--muted); font-size:1.05rem; }
+  .preorder-perks { list-style:none; display:grid; gap:.7rem; margin-top:1.4rem; }
+  .preorder-perks li { display:flex; gap:.6rem; align-items:center; font-weight:600; color:var(--navy); font-size:.98rem; }
+  .preorder-perks svg { width:22px; height:22px; color:var(--ok); flex:none; }
+
+  .preorder-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.5rem,3vw,2.3rem); box-shadow:var(--shadow); }
+  .form-row { display:grid; gap:1rem 1.1rem; grid-template-columns:1fr 1fr; }
+  .field { display:flex; flex-direction:column; gap:.4rem; }
+  .field.full { grid-column:1/-1; }
+  .field label { font-weight:700; font-size:.88rem; color:var(--navy); }
+  .field label .req { color:var(--orange); }
+  .field input, .field select, .field textarea { font-family:inherit; font-size:1rem; padding:.72em .9em; border:1.5px solid var(--line); border-radius:10px; background:var(--paper); color:var(--ink); transition:border-color .15s, box-shadow .15s; width:100%; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:var(--orange); box-shadow:0 0 0 3px rgba(231,100,31,.15); background:#fff; }
+  .field textarea { resize:vertical; min-height:78px; }
+  .field.error input, .field.error select, .field.error textarea { border-color:#d64545; box-shadow:0 0 0 3px rgba(214,69,69,.12); }
+  .consent { display:flex; gap:.6rem; align-items:flex-start; font-size:.83rem; color:var(--muted); margin:1.2rem 0; line-height:1.45; }
+  .consent input { width:20px; height:20px; margin-top:.1rem; flex:none; accent-color:var(--orange); }
+  .consent a { color:var(--orange); text-decoration:underline; }
+  .consent.error { color:#d64545; }
+  .form-submit { width:100%; justify-content:center; }
+  .form-note { font-size:.76rem; color:var(--muted); text-align:center; margin-top:.9rem; }
+  .form-success { display:none; text-align:center; padding:1.5rem .5rem; }
+  .form-success.show { display:block; animation:rise .5s ease; }
+  .form-success .ok-ic { width:64px; height:64px; border-radius:50%; background:var(--ok); display:grid; place-items:center; margin:0 auto 1rem; }
+  .form-success .ok-ic svg { width:32px; height:32px; color:#fff; }
+  .form-success h3 { color:var(--navy); font-size:1.5rem; margin-bottom:.5rem; }
+  .form-success p { color:var(--muted); }
+
+  /* ---------- FAQ ---------- */
+  .faq { display:grid; gap:.8rem; max-width: 820px; margin-inline:auto; }
+  details.faq-item {
+    background:var(--paper-2); border:1px solid var(--line); border-radius:14px; padding: 1.1rem 1.3rem;
+  }
+  details.faq-item summary {
+    cursor:pointer; font-weight:800; color:var(--navy); list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:1rem;
+  }
+  details.faq-item summary::-webkit-details-marker { display:none; }
+  details.faq-item summary::after { content:"+"; font-family:'Anton',sans-serif; color:var(--orange); font-size:1.5rem; line-height:1; transition: transform .2s; }
+  details.faq-item[open] summary::after { transform: rotate(45deg); }
+  details.faq-item p { color:var(--muted); margin-top:.8rem; }
+
+  /* ---------- Footer ---------- */
+  footer.site {
+    background: var(--navy-deep); color: rgba(255,255,255,.8); padding: 3rem 0 2rem;
+  }
+  .footer-grid { display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,.12); }
+  footer.site .logo .mark { color:#fff; }
+  footer.site h4 { color:#fff; font-size:.95rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:1rem; }
+  footer.site a { display:block; color:rgba(255,255,255,.7); padding:.25rem 0; transition: color .15s; }
+  footer.site a:hover { color: var(--orange-2); }
+  .footer-bottom { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; padding-top:1.5rem; font-size:.85rem; color:rgba(255,255,255,.55); }
+  .footer-bottom p { font-size:.85rem; }
+
+  /* ---------- Reveal animation (progressive enhancement) ---------- */
+  /* Standardmäßig sichtbar – nur wenn JS aktiv ist, wird vorab ausgeblendet und eingeblendet. */
+  .js .reveal { opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .js .reveal.in { opacity:1; transform:none; }
+  .hero h1, .hero p.lead, .hero .hero-cta, .hero-visual { opacity:0; animation: rise .8s ease forwards; }
+  .hero h1 { animation-delay:.05s; } .hero p.lead { animation-delay:.18s; }
+  .hero .hero-cta { animation-delay:.3s; } .hero-visual { animation-delay:.2s; }
+  @keyframes rise { to { opacity:1; transform:none; } from { transform: translateY(26px); } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 940px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 440px; margin-inline:auto; }
+    .benefits-grid, .buy-card { grid-template-columns: 1fr; }
+    .videos-3 { grid-template-columns: 1fr; }
+    .buy-card { text-align:center; }
+    .buy-price { order:-1; }
+    .surfaces { grid-template-columns: repeat(4,1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display:none; }
+    .burger { display:block; }
+  }
+  @media (max-width: 560px) {
+    .trustbar .wrap { gap:.8rem; }
+    .trust-item { font-size:.82rem; }
+    .surfaces { grid-template-columns: repeat(2,1fr); }
+    .ba-grid { grid-template-columns:1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .nav-cta .btn-ghost { display:none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, .hero h1, .hero p.lead, .hero .hero-cta, .hero-visual { animation:none !important; opacity:1 !important; transform:none !important; transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="FRIDL Startseite">
+      <img src="assets/logo-fridl.svg" alt="FRIDL" class="logo-img" width="91" height="46" />
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#vorbestellen">Vorbestellen</a>
+      <a href="#anwendung">Anwendung</a>
+      <a href="#oberflaechen">Oberflächen</a>
+      <a href="#vorteile">Vorteile</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#vorbestellen" class="btn btn-primary">Jetzt vorbestellen</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">🔜 Verfügbar in wenigen Wochen · Jetzt vorbestellen</span>
+      <h1 class="display">Damit nichts<br>kleben bleibt<span class="dot">.</span></h1>
+      <p class="lead">Das professionelle Trennmittel zur Vermeidung von PU-Schaum-Anhaftungen – auf den verschiedensten Oberflächen.</p>
+      <div class="hero-cta">
+        <a href="#vorbestellen" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Jetzt vorbestellen
+        </a>
+        <a href="#video" class="btn btn-ghost">So funktioniert's</a>
+        <div class="price-flag">
+          <span class="intro-badge">Einführungspreis</span>
+          <span class="amt">19,95 € <span class="was-price">24,95 €</span></span>
+          <span class="sub">inkl. MwSt. · zzgl. Versand</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="badge-float badge-de">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg>
+        Made in Germany
+      </div>
+      <div class="badge-float badge-eco">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20c-5 0-8-4-8-9 6 0 9 3 9 9zM13 20c5 0 8-4 8-12-7 0-11 4-11 12"/></svg>
+        Lösemittelfrei
+      </div>
+      <div class="product-stage">
+        <img class="product-photo" src="assets/produkt-dose.png" alt="FRIDL PU-Schaum Antihaft, 250 ml Tiegel mit Schraubverschluss" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<div class="trustbar">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg>
+      Verhindert Anhaften
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2 5 5 .5-4 3.5 1.5 5L12 19l-4.5 3 1.5-5-4-3.5 5-.5z"/></svg>
+      Rückstandslos entfernbar
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20c-5 0-8-4-8-9 6 0 9 3 9 9zM13 20c5 0 8-4 8-12-7 0-11 4-11 12"/></svg>
+      Lösemittelfrei, keine Chemie
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      Für viele Oberflächen
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v7M10 10.5V6a2 2 0 0 0-4 0v8c0 3.5 2.5 7 6.5 7h1c3 0 5-1.5 6-4l1.5-4a1.8 1.8 0 0 0-3.3-1.5L18 13"/></svg>
+      Hautfreundlich &amp; handfreundlich
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4a16 16 0 0 1 16 16C10.06 20 4 13.94 4 4Z"/><path d="M4 4c0 6 3 12 9 15"/></svg>
+      Biologisch abbaubar
+    </div>
+  </div>
+</div>
+
+<!-- ================= VORBESTELLUNG ================= -->
+<section class="block preorder-sec" id="vorbestellen">
+  <div class="wrap preorder-grid">
+    <div class="preorder-info reveal">
+      <span class="badge-soon">🔜 Verfügbar in wenigen Wochen</span>
+      <h2 class="display">Jetzt unverbindlich vorbestellen</h2>
+      <p>FRIDL PU-Schaum Antihaft ist in wenigen Wochen verfügbar. Tragen Sie sich hier ein – wir informieren Sie <strong>persönlich, sobald Sie bestellen können</strong>, inklusive Liefertermin und Bezugsquelle.</p>
+      <ul class="preorder-perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Unverbindlich &amp; kostenlos – keine Kaufverpflichtung</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Als Erste:r informiert, sobald bestellbar</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Sonderkonditionen für Gewerbe &amp; größere Mengen</li>
+      </ul>
+    </div>
+
+    <div class="preorder-card reveal">
+      <!-- data-endpoint leer = E-Mail-Modus (kein Server nötig). Für automatische Erfassung
+           hier eine Formspree-URL o.ä. eintragen ODER in WordPress ein Formular-Plugin nutzen. -->
+      <form id="preorderForm" data-endpoint="" data-mailto="vorbestellung@fridl.info" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="pf-name">Name <span class="req">*</span></label>
+            <input id="pf-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="pf-email">E-Mail <span class="req">*</span></label>
+            <input id="pf-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="pf-firma">Firma (optional)</label>
+            <input id="pf-firma" name="firma" type="text" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="pf-phone">Telefon (optional)</label>
+            <input id="pf-phone" name="telefon" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="pf-menge">Gewünschte Menge (Dosen) <span class="req">*</span></label>
+            <input id="pf-menge" name="menge" type="number" min="1" step="1" value="1" required />
+          </div>
+          <div class="field">
+            <label for="pf-typ">Ich bestelle als</label>
+            <select id="pf-typ" name="typ">
+              <option>Privatkunde</option>
+              <option>Gewerbe / Handwerk</option>
+              <option>Händler / Wiederverkäufer</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="pf-msg">Nachricht (optional)</label>
+            <textarea id="pf-msg" name="nachricht" placeholder="Fragen oder Wünsche?"></textarea>
+          </div>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required />
+          <span>Ich bin einverstanden, dass meine Angaben zur Kontaktaufnahme bezüglich der Vorbestellung gespeichert werden. Details in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>. <span class="req">*</span></span>
+        </label>
+        <label class="consent">
+          <input type="checkbox" name="newsletter" />
+          <span>Ja, ich möchte zusätzlich per E-Mail über Produktneuigkeiten, Verfügbarkeit und Angebote informiert werden (jederzeit abbestellbar).</span>
+        </label>
+        <button type="submit" class="btn btn-primary form-submit">Vorbestellung absenden</button>
+        <p class="form-note">Unverbindlich · keine Kaufverpflichtung · jederzeit widerrufbar</p>
+      </form>
+
+      <div class="form-success" id="preorderSuccess" role="status" aria-live="polite">
+        <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Vielen Dank!</h3>
+        <p id="successMsg">Wir haben Ihre Vorbestellung notiert und melden uns, sobald FRIDL bestellbar ist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANWENDUNG ================= -->
+<section class="block" id="anwendung">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Einfache Anwendung</span>
+      <h2 class="display">In drei Schritten<br>zur sauberen Oberfläche</h2>
+      <p>Vorher auftragen, Schaum verwenden, mit einem nassen Schwamm abwischen – fertig.</p>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <div class="num">1</div>
+        <h3>Auftragen</h3>
+        <p>Vor der Verwendung von PU-Schaum dünn auf die zu schützende Oberfläche auftragen – z. B. mit Pinsel oder Tuch.</p>
+      </article>
+      <article class="step reveal">
+        <div class="num">2</div>
+        <h3>PU-Schaum verwenden</h3>
+        <p>Montageschaum wie gewohnt auftragen. Keine Anhaftung auf der behandelten Oberfläche.</p>
+      </article>
+      <article class="step reveal">
+        <div class="num">3</div>
+        <h3>Entfernen</h3>
+        <p>Nach Gebrauch mit einem nassen Schwamm abwischen. Fertig. Sauber. Rückstandslos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OBERFLÄCHEN ================= -->
+<section class="block surfaces-sec" id="oberflaechen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--orange-2)">Für viele Oberflächen geeignet</span>
+      <h2 class="display">Schützt nahezu jeden Untergrund</h2>
+      <p>Ideal für Fensterbau, Türmontage und Innenausbau – überall dort, wo sauberes und effizientes Arbeiten gefragt ist. Auch als Abklebe-Alternative bei ausgewählten Sprühlacken einsetzbar.</p>
+    </div>
+    <div class="surfaces">
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18M3 9l3-5h12l3 5M5 9v11h14V9"/></svg><span>Holz</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9h16M9 4v16"/></svg><span>Metall</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h10l2 7-7 11-7-11z"/></svg><span>Kunststoff</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg><span>Glas</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V6l8-3 8 3v14M4 12h16"/></svg><span>Marmor</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 19l3-9 4 3 3-6 4 12z"/></svg><span>Stein</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h18M3 16h18M9 3v18M15 3v18"/></svg><span>Keramik</span></div>
+      <div class="surface"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="8" width="10" height="13" rx="1.5"/><path d="M9.5 8V5a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 14.5 5v3M5.5 5h1.2M5.5 3h2.2"/></svg><span>Sprühlack*</span></div>
+    </div>
+    <p style="margin-top:1.2rem;font-size:.82rem;color:rgba(255,255,255,.55);">* Als Abklebe-Alternative: Fläche vor dem Sprühen mit FRIDL bestreichen – ausgewählter Sprühlack haftet dort nicht und lässt sich rückstandslos entfernen. Verträglichkeit vorab an unauffälliger Stelle testen.</p>
+  </div>
+</section>
+
+<!-- ================= VORHER / NACHHER ================= -->
+<section class="block" id="vorhernachher">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Vorher / Nachher</span>
+      <h2 class="display">Saubere Oberflächen.<br>Kein mühsames Entfernen.</h2>
+      <p>Kein Anhaften, kein Kratzen, kein beschädigter Untergrund – einfach abwischen.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card ba-before reveal">
+        <span class="ba-tag">Ohne FRIDL Antihaft</span>
+        <div class="ph" style="background-image:url('assets/vorher.png');">
+          <div class="ba-note">Schaum haftet fest an – nur mit Mühe entfernbar.</div>
+        </div>
+      </div>
+      <div class="ba-card ba-after reveal">
+        <span class="ba-tag">Mit FRIDL Antihaft</span>
+        <div class="ph" style="background-image:url('assets/nachher.png');">
+          <div class="ba-note">Saubere Oberfläche. Kein Anhaften. Rückstandslos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VORTEILE + BESCHREIBUNG ================= -->
+<section class="block" id="vorteile" style="background:linear-gradient(180deg,#fff,var(--paper));">
+  <div class="wrap benefits-grid">
+    <div class="reveal">
+      <span class="eyebrow">Ihre Vorteile</span>
+      <h2 class="display" style="color:var(--navy);font-size:clamp(1.9rem,4vw,3rem);margin:.5rem 0 1.6rem;">Warum FRIDL Antihaft?</h2>
+      <ul class="benefit-list">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Verhindert zuverlässig das Anhaften von PU-Montageschaum</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Rückstandslos entfernbar – spart Zeit und Aufwand</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Lösemittelfrei, keine Chemie</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Hautfreundlich und handfreundlich – einfach mit dem Pinsel aufzutragen</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Materialschonend und sicher in der Anwendung</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Auch als Abklebe-Alternative bei Sprühlack einsetzbar – verhindert das Anhaften</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Biologisch abbaubar</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Für professionelle Anwendungen im Handwerk und Bau</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>100% in Deutschland entwickelt &amp; produziert</li>
+      </ul>
+    </div>
+    <aside class="desc-card reveal">
+      <h3>Produktbeschreibung</h3>
+      <p>FRIDL PU-Schaum Antihaft ist ein speziell entwickeltes Trennmittel zur Vermeidung von Anhaftungen durch PU-Montageschaum auf verschiedenen Oberflächen wie Holz, Metall, Kunststoff, Glas, Marmor, Stein und Keramik. Auch als Alternative zum Abkleben einsetzbar: Vor dem Sprühen aufgetragen, verhindert FRIDL zuverlässig, dass ausgewählte Sprühlacke an der behandelten Stelle anhaften.</p>
+      <p>Ideal für Türeinbau, Zargenmontage, Fenstermontage, Trockenbauarbeiten, Formenbau sowie Renovierungs- und Heimwerkerprojekte – für Profi-Handwerker (Tischler, Trockenbauer, Zimmerer, Maurer, SHK-Installateure) ebenso wie für Heimwerker, die regelmäßig mit Montageschaum arbeiten. Hautfreundlich und handfreundlich in der Anwendung – einfach mit dem Pinsel aufzutragen, ganz ohne Aufwand.</p>
+      <p>Biologisch abbaubar. 100% in Deutschland entwickelt &amp; produziert.</p>
+      <div class="maker">
+        <b>Inhalt:</b> 250 ml &nbsp;·&nbsp; <b>Hersteller:</b> Burck &amp; Witt UG, Am Strande 48, 23730 Sierksdorf
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= VIDEO ================= -->
+<section class="block video-sec" id="video">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--orange-2)">Profi-Tipp</span>
+      <h2 class="display">Sehen Sie FRIDL<br>in Aktion</h2>
+      <p>Kurze Videos zeigen, wie einfach und effektiv FRIDL PU-Schaum Antihaft wirkt – auftragen, arbeiten, abwischen. Alle Videos gibt es auch auf unserem YouTube-Kanal.</p>
+      <span class="placeholder-tag">2 von 3 Videos eingebunden – drittes folgt</span>
+    </div>
+    <div class="videos-3">
+      <article class="video-card reveal">
+        <div class="video-frame has-video">
+          <video controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:contain;background:#000;">
+            <source src="videos/fridl-produkt-in-aktion.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h3>Produkt in Aktion</h3>
+        <p>FRIDL im Einsatz: PU-Schaum wird aufgetragen, angehaftet abgewartet und rückstandslos vom Brett gelöst.</p>
+      </article>
+      <article class="video-card reveal">
+        <div class="video-frame" role="img" aria-label="Video-Platzhalter: Anleitung zur Verarbeitung">
+          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <h3>Anleitung zur Verarbeitung</h3>
+        <p>Schritt für Schritt: mit dem Pinsel auftragen, PU-Schaum verwenden, mit nassem Schwamm entfernen.</p>
+      </article>
+      <article class="video-card reveal">
+        <div class="video-frame has-video">
+          <video controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:contain;background:#000;">
+            <source src="videos/fridl-test-lackierte-flaeche.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h3>Test auf lackierter Fläche</h3>
+        <p>Praxistest auf einer lackierten Fläche (z. B. Sprühlack): PU-Schaum haftet nicht – lässt sich sogar mit bloßer Hand rückstandslos entfernen.</p>
+      </article>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:2.5rem;">
+      <a href="#" id="youtubeChannelBtn" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.25 5.6 12 5.6 12 5.6s-6.25 0-7.86.46A2.75 2.75 0 0 0 2.2 8.001 28.7 28.7 0 0 0 1.74 12a28.7 28.7 0 0 0 .46 3.999 2.75 2.75 0 0 0 1.94 1.94C5.75 18.4 12 18.4 12 18.4s6.25 0 7.86-.46a2.75 2.75 0 0 0 1.94-1.94A28.7 28.7 0 0 0 22.26 12a28.7 28.7 0 0 0-.46-3.999zM10 15.2V8.8L15.5 12z"/></svg>
+        Alle Videos auf YouTube ansehen
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KAUFEN ================= -->
+<section class="block buy-sec" id="kaufen">
+  <div class="wrap">
+    <div class="buy-card reveal">
+      <div>
+        <h2 class="display">In wenigen Wochen im Handel erhältlich</h2>
+        <p>FRIDL Antihaft erscheint in wenigen Wochen bei unseren Shop-Partnern. Sichern Sie sich jetzt Ihre Vorbestellung – Sie werden als Erste:r informiert, sobald es losgeht.</p>
+        <div class="buy-actions">
+          <a href="#vorbestellen" class="btn btn-dark form-submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Jetzt vorbestellen
+          </a>
+        </div>
+        <span class="placeholder-tag" style="color:#fff;background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);">Später erhältlich bei: Amazon · eBay</span>
+      </div>
+      <div class="buy-price">
+        <span class="intro-badge">Einführungspreis</span>
+        <div class="big">19,95 € <span class="was-price">24,95 €</span></div>
+        <div class="vat">inkl. MwSt. · zzgl. Versand</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center;margin-inline:auto;">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2 class="display">Gut zu wissen</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item reveal"><summary>Auf welchen Oberflächen kann ich FRIDL Antihaft verwenden?</summary><p>Auf Holz, Metall, Kunststoff, Glas, Marmor, Stein und Keramik. Ideal im Fensterbau, bei der Türmontage und im Innenausbau.</p></details>
+      <details class="faq-item reveal"><summary>Funktioniert FRIDL auch bei Sprühlack?</summary><p>Ja. FRIDL eignet sich auch als Alternative zum Abkleben: Tragen Sie FRIDL auf die Fläche auf, auf der der Lack nicht haften soll, und sprühen Sie wie gewohnt. Der Lack haftet auf der behandelten Stelle nicht an und lässt sich rückstandslos entfernen. Da sich Sprühlacke stark unterscheiden, empfehlen wir, die Verträglichkeit vorab an einer unauffälligen Stelle zu testen.</p></details>
+      <details class="faq-item reveal"><summary>Wie wird das Mittel angewendet?</summary><p>Vor dem Schäumen dünn mit Pinsel oder Tuch auf die zu schützende Fläche auftragen. Nach dem Arbeiten einfach mit einem nassen Schwamm rückstandslos abwischen.</p></details>
+      <details class="faq-item reveal"><summary>Enthält FRIDL Antihaft Lösemittel?</summary><p>Nein. FRIDL PU-Schaum Antihaft ist lösemittelfrei, hautfreundlich, materialschonend, biologisch abbaubar und sicher in der Anwendung.</p></details>
+      <details class="faq-item reveal"><summary>Wie groß ist die Verpackung?</summary><p>Die Dose enthält 250 ml. Hersteller: Burck &amp; Witt UG, Am Strande 48, 23730 Sierksdorf – entwickelt und produziert in Deutschland.</p></details>
+      <details class="faq-item reveal"><summary>Wo kann ich FRIDL Antihaft kaufen?</summary><p>Über unsere Shop-Partner (Amazon / eBay) – die Bestell-Buttons finden Sie im Abschnitt „Jetzt kaufen".</p></details>
+      <details class="faq-item reveal"><summary>Wie erfahre ich von Produktneuigkeiten und der Verfügbarkeit?</summary><p>Im Vorbestell-Formular können Sie die Checkbox „Produktneuigkeiten per E-Mail" aktivieren – dann informieren wir Sie zusätzlich über Neuigkeiten, Verfügbarkeit und Angebote.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:1rem;display:inline-block;">
+          <img src="assets/logo-fridl-white.svg" alt="FRIDL" style="height:58px;width:auto;display:block;" />
+        </a>
+        <p style="max-width:34ch;font-size:.92rem;">PU-Schaum Antihaft – das lösemittelfreie Profi-Trennmittel. Damit nichts kleben bleibt. Entwickelt und produziert in Deutschland.</p>
+      </div>
+      <div>
+        <h4>Produkt</h4>
+        <a href="#vorbestellen">Vorbestellen</a>
+        <a href="#anwendung">Anwendung</a>
+        <a href="#oberflaechen">Oberflächen</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#video">Videos</a>
+        <a href="#" id="youtubeChannelLink" target="_blank" rel="noopener">YouTube-Kanal (folgt in Kürze)</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Burck &amp; Witt UG · Am Strande 48 · 23730 Sierksdorf</p>
+      <p>Made in Germany 🇩🇪</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // JS aktiv → Reveal-Effekt einschalten (sonst bleibt der Inhalt von Haus aus sichtbar)
+  document.documentElement.classList.add('js');
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Sicherheitsnetz: falls eine Section nie in den Viewport scroll-getriggert wird, nach 1,2 s sichtbar machen
+  window.addEventListener('load', () => setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add('in');
+    });
+  }, 1200));
+
+  // ---- Vorbestellungs-Formular ----
+  const form = document.getElementById('preorderForm');
+  if (form) {
+    const success = document.getElementById('preorderSuccess');
+    const setError = (field, on) => field.closest('.field, .consent').classList.toggle('error', on);
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      let ok = true;
+      const name = form.name, email = form.email, menge = form.menge, consent = form.consent;
+      // Pflichtfeld-Prüfung
+      [name, email, menge].forEach(f => { const bad = !f.value.trim(); setError(f, bad); if (bad) ok = false; });
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      if (!emailOk) { setError(email, true); ok = false; }
+      setError(consent, !consent.checked); if (!consent.checked) ok = false;
+      if (!ok) { form.querySelector('.field.error, .consent.error')?.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      const showSuccess = () => {
+        document.getElementById('successMsg').textContent =
+          `Danke, ${data.name}! Wir haben Ihre Vorbestellung über ${data.menge} Dose(n) notiert und melden uns an ${data.email}, sobald FRIDL bestellbar ist.`;
+        form.style.display = 'none';
+        success.classList.add('show');
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      };
+
+      const endpoint = form.dataset.endpoint;
+      if (endpoint) {
+        // Produktivmodus: an Formspree o.ä. senden
+        try {
+          const res = await fetch(endpoint, { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form) });
+          if (!res.ok) throw new Error('Serverfehler');
+          showSuccess();
+        } catch (e) {
+          alert('Senden fehlgeschlagen. Bitte später erneut versuchen oder eine E-Mail an ' + form.dataset.mailto + ' schreiben.');
+        }
+      } else {
+        // Platzhalter-Modus: vorbefüllte E-Mail öffnen (kein Server nötig)
+        const to = form.dataset.mailto || '';
+        const subject = encodeURIComponent('Vorbestellung FRIDL PU-Schaum Antihaft');
+        const body = encodeURIComponent(
+          `Name: ${data.name}\nE-Mail: ${data.email}\nFirma: ${data.firma||'-'}\nTelefon: ${data.telefon||'-'}\n` +
+          `Menge: ${data.menge} Dose(n)\nKundentyp: ${data.typ}\nNewsletter: ${data.newsletter ? 'Ja' : 'Nein'}\nNachricht: ${data.nachricht||'-'}`
+        );
+        showSuccess();
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      }
+    });
+
+    // Fehler-Markierung beim Tippen zurücksetzen
+    form.querySelectorAll('input, select, textarea').forEach(el =>
+      el.addEventListener('input', () => el.closest('.field, .consent')?.classList.remove('error')));
+  }
+</script>
+</body>
+</html>

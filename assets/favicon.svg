@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="FRIDL">
+  <title>FRIDL</title>
+  <rect width="100" height="100" rx="22" fill="#16243C"/>
+  <g stroke="#FFFFFF" stroke-width="11" fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+    <path d="M37 28 V72 M37 33 H64 M37 52 H58"/>
+  </g>
+  <path d="M26 82 C46 75 58 75 74 80" stroke="#E7641F" stroke-width="7" fill="none" stroke-linecap="round"/>
+</svg>
