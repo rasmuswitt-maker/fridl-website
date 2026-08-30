@@ -40,7 +40,7 @@ $body .= "Newsletter gewünscht: $newsletter\n";
 $body .= "Nachricht:\n" . ($nachricht !== '' ? $nachricht : '-') . "\n";
 
 $headers   = [];
-$headers[] = 'From: FRIDL Website <no-reply@fridl.shop>';
+$headers[] = 'From: FRIDL Website <service@fridl.shop>';
 $headers[] = 'Reply-To: ' . clean_header_field($email);
 $headers[] = 'Content-Type: text/plain; charset=UTF-8';
 
