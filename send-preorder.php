@@ -26,6 +26,14 @@ if ($name === '' || $menge === '' || !filter_var($email, FILTER_VALIDATE_EMAIL))
     exit;
 }
 
+$configFile = __DIR__ . '/mail-config.php';
+if (!is_file($configFile)) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'error' => 'config_missing']);
+    exit;
+}
+$config = require $configFile;
+
 $to      = 'service@fridl.shop';
 $subject = 'Neue Vorbestellung: ' . $name;
 
@@ -39,13 +47,73 @@ $body .= "Kundentyp: " . ($typ !== '' ? $typ : '-') . "\n";
 $body .= "Newsletter gewünscht: $newsletter\n";
 $body .= "Nachricht:\n" . ($nachricht !== '' ? $nachricht : '-') . "\n";
 
-$headers   = [];
-$headers[] = 'From: FRIDL Website <service@fridl.shop>';
-$headers[] = 'Reply-To: ' . clean_header_field($email);
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
+/**
+ * Minimaler SMTP-Client (kein PHPMailer/Composer verfuegbar).
+ * Sendet authentifiziert ueber das echte service@fridl.shop-Postfach,
+ * damit SPF/DKIM/Reputation stimmen (Fix fuer Microsoft-365-Blockade).
+ */
+function smtp_send(array $config, string $to, string $subject, string $body, string $replyTo) {
+    $errno = 0;
+    $errstr = '';
+    $socket = @stream_socket_client(
+        'ssl://' . $config['smtp_host'] . ':' . $config['smtp_port'],
+        $errno,
+        $errstr,
+        10
+    );
+    if (!$socket) {
+        return false;
+    }
+    stream_set_timeout($socket, 10);
 
-$encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-$sent = @mail($to, $encodedSubject, $body, implode("\r\n", $headers));
+    $readResponse = function () use ($socket) {
+        $data = '';
+        while (($line = fgets($socket, 515)) !== false) {
+            $data .= $line;
+            if (isset($line[3]) && $line[3] === ' ') {
+                break;
+            }
+        }
+        return $data;
+    };
+    $sendCommand = function (string $cmd) use ($socket, $readResponse) {
+        fwrite($socket, $cmd . "\r\n");
+        return $readResponse();
+    };
+
+    $readResponse(); // Server-Greeting
+    $sendCommand('EHLO fridl.shop');
+    $sendCommand('AUTH LOGIN');
+    $sendCommand(base64_encode($config['smtp_user']));
+    $authResp = $sendCommand(base64_encode($config['smtp_pass']));
+    if (strpos($authResp, '235') !== 0) {
+        fclose($socket);
+        return false;
+    }
+
+    $sendCommand('MAIL FROM:<' . $config['smtp_user'] . '>');
+    $sendCommand('RCPT TO:<' . $to . '>');
+    $sendCommand('DATA');
+
+    $headers  = 'From: FRIDL Website <' . $config['smtp_user'] . ">\r\n";
+    $headers .= 'To: <' . $to . ">\r\n";
+    $headers .= 'Reply-To: <' . $replyTo . ">\r\n";
+    $headers .= 'Subject: =?UTF-8?B?' . base64_encode($subject) . "?=\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "\r\n";
+
+    // Byte-Stuffing: Zeilen, die mit '.' beginnen, verdoppeln (SMTP DATA-Ende-Erkennung)
+    $stuffedBody = preg_replace('/^\./m', '..', $body);
+
+    $finalResp = $sendCommand($headers . $stuffedBody . "\r\n.");
+    $sendCommand('QUIT');
+    fclose($socket);
+
+    return strpos($finalResp, '250') === 0;
+}
+
+$sent = smtp_send($config, $to, $subject, $body, $email);
 
 if ($sent) {
     echo json_encode(['ok' => true]);
