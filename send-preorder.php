@@ -20,7 +20,7 @@ $typ        = clean_header_field($_POST['typ'] ?? '');
 $nachricht  = trim((string) ($_POST['nachricht'] ?? ''));
 $newsletter = !empty($_POST['newsletter']) ? 'Ja' : 'Nein';
 
-if ($name === '' || $menge === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['ok' => false, 'error' => 'invalid_input']);
     exit;
@@ -35,14 +35,15 @@ if (!is_file($configFile)) {
 $config = require $configFile;
 
 $to      = 'service@fridl.shop';
-$subject = 'Neue Vorbestellung: ' . $name;
+$istAnfrage = ($firma !== '' || $menge !== '' || $nachricht !== '');
+$subject = ($istAnfrage ? 'Neue Vormerkung + Konditionsanfrage: ' : 'Neue Vormerkung: ') . ($name !== '' ? $name : $email);
 
-$body  = "Neue Vorbestellung über fridl.shop\n\n";
-$body .= "Name: $name\n";
+$body  = "Neue Vormerkung über fridl.shop\n\n";
+$body .= "Name: " . ($name !== '' ? $name : '-') . "\n";
 $body .= "E-Mail: $email\n";
 $body .= "Firma: " . ($firma !== '' ? $firma : '-') . "\n";
 $body .= "Telefon: " . ($telefon !== '' ? $telefon : '-') . "\n";
-$body .= "Menge: $menge Dose(n)\n";
+$body .= "Menge: " . ($menge !== '' ? "$menge Dose(n)" : '-') . "\n";
 $body .= "Kundentyp: " . ($typ !== '' ? $typ : '-') . "\n";
 $body .= "Newsletter gewünscht: $newsletter\n";
 $body .= "Nachricht:\n" . ($nachricht !== '' ? $nachricht : '-') . "\n";

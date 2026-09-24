@@ -6,7 +6,7 @@ tags: [fridl, website, hostinger]
 # FRIDL PU-Schaum Antihaft – Landingpage
 
 Fertige, eigenständige Produkt-Landingpage im FRIDL-Look (Navy/Orange).
-Sprache: Deutsch · Zielgruppe: Profis + Heimwerker · Verkauf: extern (Amazon/eBay).
+Sprache: Deutsch · Zielgruppe: Profis + Heimwerker · Verkauf: extern (Amazon).
 
 ## Dateien
 
@@ -64,7 +64,7 @@ an `witt@hinsch-voelckers.de`). Dieselbe Adresse steht auch in Impressum und Dat
 ## Noch zu erledigen (Platzhalter) ⚠️
 
 - [ ] **Vorbestell-Ziel:** `data-mailto` auf echte Adresse setzen bzw. `data-endpoint` (Formspree) hinterlegen.
-- [ ] **Shop-Links (später):** Sobald bestellbar – Abschnitt „Bald im Handel" auf echte Amazon-/eBay-Buttons umstellen.
+- [ ] **Shop-Links (später):** Sobald bestellbar – Abschnitt „Bald im Handel" auf einen echten Amazon-Button umstellen.
 - [x] **Produktfotos:** Vorher/Nachher-Boxen (`.ba-card`) nutzen Fotos aus dem Flyer-PDF. Hero-Bild ist seit 30.08.2026 ein KI-Rendering (`ChatGPT Image 29. Aug. 2026, 21_38_38.png` in `FRIDL OptiTren Pro/`) des echten Schraubverschluss-Tiegels statt des ursprünglichen Flyer-Eimers mit Henkel – zeigt jetzt korrekt die tatsächliche Verpackungsform. `.product-photo` läuft seither als Vollbild (`object-fit:cover`) statt freigestelltes Objekt.
 - [x] **Video-Anzeige-Bug behoben (30.08.2026):** `.video-frame` nutzte `display:grid;place-items:center`, wodurch das Portrait-Video (`fridl-produkt-in-aktion.mp4`, 576×1024) nicht gestreckt, sondern in Originalgröße zentriert und vom `overflow:hidden`-Rahmen oben abgeschnitten wurde (nur ein Ausschnitt sichtbar). Fix: `.video-frame.has-video { display:block; }`, dadurch greift `object-fit:contain` korrekt und zeigt das komplette Video (mit Letterboxing links/rechts).
 - [ ] **Drittes Video:** Nur 2 von 3 angekündigten Videos sind eingebunden. Die Platzhalter-Karte für das dritte Video („Anleitung zur Verarbeitung") wurde auf Wunsch entfernt – Grid läuft aktuell zweispaltig (`.videos-2`). Sobald das dritte Video da ist: dritte `<article class="video-card">` wieder ergänzen und `.videos-2`-Klasse vom Grid entfernen.
@@ -91,10 +91,31 @@ an `witt@hinsch-voelckers.de`). Dieselbe Adresse steht auch in Impressum und Dat
 3. Diese Seite unter *Einstellungen → Lesen* als **Startseite** festlegen.
 4. Impressum & Datenschutz je als eigene WP-Seite anlegen, Inhalt einfügen, im Footer-Menü verlinken.
 
-> Hinweis: WooCommerce ist **nicht** nötig, solange der Verkauf über Amazon/eBay läuft.
+> Hinweis: WooCommerce ist **nicht** nötig, solange der Verkauf über Amazon läuft.
 > Will man später direkt verkaufen, lässt es sich jederzeit nachrüsten.
 
 ## DSGVO-Tipp
 Für volle Rechtssicherheit die Google Fonts **lokal** einbinden (statt per CDN), damit keine
 IP-Adressen an Google gehen. Bei statischer Seite: Schriften herunterladen und per `@font-face`
 einbinden; bei WordPress übernimmt das ein Plugin wie „OMGF".
+
+## Relaunch Startseite (24.09.2026)
+
+Umbau nach dem Marketing-Feedback: Problem → Beweis → Lösung → Vormerken, durchgehend **Du-Form**
+(Impressum/Datenschutz bleiben beim Sie).
+
+- **Hero:** „PU-Schaum gehört in die Fuge. Nicht auf deine Oberflächen." + 4 Schritte + stummer
+  8-s-Loop `videos/fridl-hero-loop.mp4` (Poster `assets/hero-loop-poster.jpg`), geschnitten aus
+  `fridl-produkt-in-aktion.mp4` Sek. 3–11,5. Neu schneiden: `ffmpeg -ss 3 -t 8.5 -i videos/fridl-produkt-in-aktion.mp4 -an -vf "crop=576:576:0:40,scale=720:720" -c:v libx264 -crf 27 -movflags +faststart videos/fridl-hero-loop.mp4`
+- **Reihenfolge:** Vergleich ohne/mit FRIDL → Videos → 3 Schritte → Einsatzbereiche → Oberflächen →
+  Vorteile → Vormerken → Final-CTA → FAQ.
+- **Formular (`#vormerken`):** Pflicht nur E-Mail + Einwilligung; Firma/Menge/Nachricht optional
+  unter „Sonderkonditionen anfragen". `send-preorder.php` prüft entsprechend nur noch die E-Mail.
+- Beim Upload mitnehmen: `index.html`, `send-preorder.php`, `videos/fridl-hero-loop.mp4`,
+  `assets/hero-loop-poster.jpg`.
+
+### Mobil-Optimierung (24.09.2026)
+- Unter 940 px steht das Hero-Video direkt unter der Überschrift (Effekt im ersten Bildschirm).
+- Unter 560 px: Buttons auf voller Breite, Trust-Leiste 2×2, kompaktere Karten, Oberflächen 4-spaltig,
+  Sticky-Leiste „Jetzt vormerken" unten (erscheint nach dem Hero, verschwindet am Formular/Footer).
+- Fix: Das Formular lief auf dem Handy über den rechten Rand (Button nicht klickbar) – jetzt einspaltig.
