@@ -119,3 +119,8 @@ Umbau nach dem Marketing-Feedback: Problem → Beweis → Lösung → Vormerken,
 - Unter 560 px: Buttons auf voller Breite, Trust-Leiste 2×2, kompaktere Karten, Oberflächen 4-spaltig,
   Sticky-Leiste „Jetzt vormerken" unten (erscheint nach dem Hero, verschwindet am Formular/Footer).
 - Fix: Das Formular lief auf dem Handy über den rechten Rand (Button nicht klickbar) – jetzt einspaltig.
+
+### Neue Logos (24.09.2026)
+Quelle: `FRIDL OptiTren Pro/RGB/Fridel_Logo.svg|png` (echter Vektor). `assets/logo-fridl.svg` = Original mit
+enger viewBox, `logo-fridl-white.svg` = Navy→Weiß (Orange bleibt), PNGs aus `Fridel_Logo.png` gecroppt,
+`favicon.svg` = „F" aus dem Logo + Schwung. Logo in der Kopfzeile 76 px (beim Scrollen 52 px), Footer 110 px.
