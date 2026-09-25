@@ -256,7 +256,7 @@
   }
   .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
   .hero h1 {
-    font-size: clamp(2.6rem, 5.4vw, 4.4rem); color: var(--navy);
+    font-size: clamp(3.3rem, 6.8vw, 5.8rem); color: var(--navy);
     margin: 1rem 0 1.2rem;
   }
   .hero h1 .dot { color: var(--orange); }
@@ -303,7 +303,7 @@
   /* ---------- Section base ---------- */
   section.block { padding: clamp(3.5rem, 7vw, 6rem) 0; }
   .section-head { max-width: 60ch; margin-bottom: 2.5rem; }
-  .section-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); color: var(--navy); margin:.5rem 0 .8rem; }
+  .section-head h2 { font-size: clamp(2.4rem, 5.2vw, 4rem); color: var(--navy); margin:.5rem 0 .8rem; }
   .section-head p { color: var(--muted); font-size: 1.08rem; }
 
   /* ---------- Steps ---------- */
@@ -346,22 +346,14 @@
   .ba-note { font-weight:700; width:100%; text-align:center; color:#fff; padding:2.5rem 1rem 1rem; background:linear-gradient(0deg, rgba(15,26,44,.75), transparent); }
 
   /* ---------- Benefits ---------- */
-  .benefits-grid { display:grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem,5vw,4rem); align-items:start; }
-  .benefit-list { list-style:none; display:grid; gap:1rem; }
+  .benefits-grid { display:grid; grid-template-columns: 1fr; gap: clamp(2rem,5vw,4rem); align-items:start; }
+  .benefit-list { list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:1rem 2.6rem; }
   .benefit-list li { display:flex; gap:.9rem; align-items:flex-start; font-size:1.05rem; font-weight:600; color:var(--navy); }
   .benefit-list .check {
     flex:none; width:28px; height:28px; border-radius:50%; background:var(--ok);
     display:grid; place-items:center; margin-top:.1rem;
   }
   .benefit-list .check svg { width:16px; height:16px; color:#fff; }
-  .desc-card {
-    background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius);
-    padding: 2rem; box-shadow: var(--shadow);
-  }
-  .desc-card h3 { color:var(--navy); font-size:1.3rem; margin-bottom:.8rem; }
-  .desc-card p { color:var(--muted); margin-bottom:1rem; }
-  .maker { font-size:.85rem; color:var(--muted); border-top:1px solid var(--line); padding-top:1rem; }
-  .maker b { color:var(--navy); }
 
   /* ---------- Video ---------- */
   .video-sec { background: linear-gradient(160deg,#0f1a2c,#1f3252); color:#fff; }
@@ -414,6 +406,10 @@
   .preorder-perks { list-style:none; display:grid; gap:.7rem; margin-top:1.4rem; }
   .preorder-perks li { display:flex; gap:.6rem; align-items:center; font-weight:600; color:var(--navy); font-size:.98rem; }
   .preorder-perks svg { width:22px; height:22px; color:var(--ok); flex:none; }
+  .preorder-perks .perk-price { font-family:'Anton',sans-serif; font-weight:400; font-size:2.8rem;
+    line-height:1; color:var(--navy); display:inline-block; vertical-align:-.12em; margin:0 .1em; }
+  .preorder-perks s { opacity:.6; font-weight:600; white-space:nowrap; }
+  .preorder-perks .perk-price { white-space:nowrap; }
 
   .preorder-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.5rem,3vw,2.3rem); box-shadow:var(--shadow); }
   .form-row { display:grid; gap:1rem 1.1rem; grid-template-columns:1fr 1fr; }
@@ -468,7 +464,7 @@
   .hero h1 .h1-sub { display:block; color:var(--orange); font-size:.62em; margin-top:.35em; }
   .hero-price { margin-top:1.1rem; display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .6rem; color:var(--muted); font-size:.92rem; }
   .hero-price .intro-badge { background:rgba(231,100,31,.12); color:var(--orange); margin:0; align-self:center; }
-  .hero-price b { font-family:'Anton',sans-serif; font-weight:400; font-size:1.45rem; color:var(--navy); line-height:1; }
+  .hero-price b { font-family:'Anton',sans-serif; font-weight:400; font-size:3.3rem; color:var(--navy); line-height:1; }
   .hero-price s { opacity:.7; }
   .hero-price .vat { font-size:.8rem; }
   .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#1f3252; }
@@ -497,6 +493,14 @@
   .use h3 { color:var(--navy); font-size:1.1rem; margin-bottom:.4rem; }
   .use p { color:var(--muted); font-size:.95rem; }
   .uses-more { margin-top:1.4rem; color:var(--muted); }
+  /* ---------- Mitreden / Feedback ---------- */
+  .feedback-sec { background: var(--paper); }
+  .feedback-card { max-width:64ch; margin-inline:auto; text-align:center; background:#fff;
+    border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+    padding: clamp(1.8rem,4vw,3rem); }
+  .feedback-card h2 { color:var(--navy); font-size:clamp(2rem,4.4vw,3.2rem); margin:.5rem 0 .9rem; }
+  .feedback-card p { color:var(--muted); font-size:1.08rem; margin-bottom:1.6rem; }
+  .feedback-card .btn svg { width:20px; height:20px; }
   .benefit-list li small { display:block; font-weight:500; font-size:.93rem; color:var(--muted); margin-top:.15rem; }
 
   /* ---------- Vormerken (kurz) ---------- */
@@ -519,7 +523,7 @@
   @media (max-width: 940px) {
     .hero-grid { grid-template-columns: 1fr; }
     .hero-visual { width:100%; max-width: 440px; margin-inline:auto; }
-    .benefits-grid, .buy-card { grid-template-columns: 1fr; }
+    .benefits-grid, .buy-card, .benefit-list { grid-template-columns: 1fr; }
     .videos-3 { grid-template-columns: 1fr; }
     .buy-card { text-align:center; }
     .buy-price { order:-1; }
@@ -567,7 +571,7 @@
     .scrolled .nav-inner { height:60px; }
     .scrolled .logo-img { height:42px; }
     .nav-cta .btn { padding:.7em 1.1em; font-size:.9rem; }
-    .hero h1 { font-size: 2.35rem; }
+    .hero h1 { font-size: 2.9rem; }
     .hero h1 .h1-sub { font-size:.6em; }
     .hero p.lead { font-size:1.02rem; }
     .hero-price { justify-content:center; }
@@ -577,7 +581,8 @@
     .trust-item { font-size:.8rem; gap:.5rem; line-height:1.25; }
     .trust-item svg { width:22px; height:22px; }
     section.block { padding: 2.6rem 0; }
-    .section-head h2 { font-size:1.75rem; }
+    .section-head h2 { font-size:2.15rem; }
+    .preorder-perks .perk-price { font-size:2.1rem; }
     .section-head p { font-size:1rem; }
     .cmp-col { padding:1.2rem; }
     .ba-card { aspect-ratio: 16/10; }
@@ -589,7 +594,6 @@
     .use svg { grid-row:span 2; margin:0; width:30px; height:30px; }
     .use h3 { margin-bottom:.2rem; }
     .benefits-grid { gap:2rem; }
-    .desc-card { padding:1.4rem; }
     .preorder-card { padding:1.2rem; }
     .form-row { grid-template-columns:1fr; }
     .consent { font-size:.82rem; }
@@ -623,6 +627,38 @@
 </style>
 </head>
 <body>
+
+<!-- ============================================================
+     NOTIZEN ZU FRIDL – Arbeitsstand 25.09.2026 (Rasmus)
+     Interne Arbeitsnotizen zum Textentwurf. Rendern nicht, sind
+     bewusst als Kommentar abgelegt.
+
+     OFFENE FRAGEN / SELBSTKRITIK ZUM TEXTENTWURF
+     - "Getestet / Prüfe usw." – weglassen? Warum will der Kunde das
+       überhaupt wissen?  (betrifft Sektion #oberflaechen + FAQ)
+     - "Kein Handwerker" (Punkt 2) – suggeriert das, dass FRIDL
+       gefährlich ist?
+     - "Als Abkleber usw." – wirkt verwirrend, komplett weglassen?
+       (betrifft Fußnote Sprühlack in #oberflaechen und den zweiten
+       Absatz der Produktbeschreibung)
+     - "Warum FRIDL" – Wiederholung des oben Gesagten?  (Sektion
+       #vorteile)
+     - Produktbeschreibung – ERLEDIGT 25.09.2026: Kasten gelöscht.
+
+     UMGESETZT AM 25.09.2026
+     - Überschriften und Preise deutlich vergrößert
+     - Vergleichskasten in die richtige Reihenfolge gebracht
+     - "Platte" durch "Untergrund" ersetzt, Motorhaube ergänzt
+     - SHK-Installation entfernt, Herkunft: Lübecker Bucht
+     - neue Sektion #mitreden vor der FAQ (Rückmeldungen an
+       service@fridl.shop)
+     - vorher.png / nachher.png: eingebrannte Bildunterschriften
+       weggeschnitten und hochskaliert; Quellbilder waren nur
+       160x170 px – echte Schärfe braucht neue Fotos
+
+     NICHT AKUT / SPÄTER KLÄREN
+     - Werbeinteresse wecken bei Würth, Fischer, Soudal?
+     ============================================================ -->
 
 <!-- ================= HEADER ================= -->
 <header class="nav">
@@ -664,7 +700,7 @@
     <div class="hero-visual">
       <div class="product-stage">
         <!-- 8-Sekunden-Loop ohne Ton, geschnitten aus videos/fridl-produkt-in-aktion.mp4 (Sek. 3–11.5) -->
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-loop-poster.jpg" aria-label="Ausgehärteter PU-Schaum wird in einem Stück von einer mit FRIDL behandelten Platte abgehoben">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-loop-poster.jpg" aria-label="Ausgehärteter PU-Schaum wird in einem Stück von einem mit FRIDL behandelten Untergrund abgehoben">
           <source src="videos/fridl-hero-loop.mp4" type="video/mp4">
         </video>
         <span class="stage-tag">Mit FRIDL: einfach abheben</span>
@@ -697,6 +733,15 @@
 </div>
 
 <!-- ================= VERGLEICH: PROBLEM → LÖSUNG ================= -->
+<!-- NOTIZ (25.09.2026) – Problemstellung ohne/mit FRIDL:
+     OHNE FRIDL: PU-Schaum klebt an Rahmen, Zargen und anderen
+       Oberflächen. Entfernung nötig – Abschneiden [gestrichen],
+       Reinigen mit Lösemittel (beschädigt Oberflächen), Reiniger
+       auftragen [gestrichen]. Kratzen – Schaben – Scheuern
+       erforderlich. Reklamationen / Gewährleistungsansprüche.
+     MIT FRIDL: Oberflächenschutz gegen Verklebungen. Keine
+       Reklamationen. Keine zeitaufwendigen Reinigungsarbeiten.
+       Gepflegte, neuwertige Oberflächen. -->
 <section class="block" id="vergleich">
   <div class="wrap">
     <div class="section-head reveal">
@@ -708,19 +753,22 @@
       <div class="cmp-col cmp-without reveal">
         <h3>Ohne FRIDL</h3>
         <ul>
-          <li>PU-Schaum haftet fest</li>
+          <li>PU-Schaum wie gewohnt anwenden</li>
+          <li>Aushärten lassen</li>
           <li>Abschneiden</li>
           <li>Reiniger auftragen</li>
-          <li>Kratzen</li>
-          <li>Risiko für die Oberfläche</li>
+          <li>Kratzen, Schaben, Schrubben</li>
+          <li>Rückstände bleiben auf der Oberfläche</li>
+          <li>Beschädigte Oberfläche</li>
         </ul>
       </div>
       <div class="cmp-col cmp-with reveal">
         <h3>Mit FRIDL</h3>
         <ul>
-          <li>Fläche deckend einstreichen</li>
+          <li>Flächendeckend einstreichen</li>
           <li>PU-Schaum wie gewohnt verwenden</li>
           <li>Aushärten lassen</li>
+          <li>Abschneiden</li>
           <li>Abheben</li>
           <li>Rückstände abwischen – fertig</li>
         </ul>
@@ -749,7 +797,7 @@
     <div class="section-head reveal">
       <span class="eyebrow" style="color:var(--orange-2)">Der Beweis</span>
       <h2 class="display">Sieh FRIDL<br>in Aktion</h2>
-      <p>Kein Schnitt-Trick, keine Werbe-Animation: echte Tests mit PU-Schaum auf einer behandelten Platte und auf einer lackierten Fläche. Alle Videos gibt es auch auf unserem YouTube-Kanal.</p>
+      <p>Kein Schnitt-Trick, keine Werbe-Animation: echte Tests mit PU-Schaum auf einem behandelten Untergrund und auf einer lackierten Fläche. Alle Videos gibt es auch auf unserem YouTube-Kanal.</p>
     </div>
     <div class="videos-3 videos-2">
       <article class="video-card reveal">
@@ -759,7 +807,7 @@
           </video>
         </div>
         <h3>Ausgehärteter Schaum – in einem Stück abgehoben</h3>
-        <p>FRIDL auf die Platte, PU-Schaum drauf, aushärten lassen – dann lässt sich der Schaum mit der Hand vom Brett lösen.</p>
+        <p>FRIDL auf den Untergrund, PU-Schaum drauf, aushärten lassen – dann lässt sich der Schaum mit der Hand vom Untergrund lösen.</p>
       </article>
       <article class="video-card reveal">
         <div class="video-frame has-video">
@@ -767,8 +815,8 @@
             <source src="videos/fridl-test-lackierte-flaeche.mp4" type="video/mp4">
           </video>
         </div>
-        <h3>Test auf lackierter Fläche</h3>
-        <p>Praxistest auf einer lackierten Fläche: PU-Schaum haftet nicht und lässt sich mit bloßer Hand abziehen.</p>
+        <h3>Test auf lackierter Fläche (Motorhaube)</h3>
+        <p>Praxistest auf einer lackierten Fläche (Motorhaube): PU-Schaum haftet nicht und lässt sich mit bloßer Hand abziehen.</p>
       </article>
     </div>
     <div class="reveal" style="text-align:center;margin-top:2.5rem;">
@@ -781,6 +829,18 @@
 </section>
 
 <!-- ================= ANWENDUNG ================= -->
+<!-- NOTIZ (25.09.2026) – Anwendung, Schritte 1–3:
+     1 VOR DEM SCHÄUMEN: FRIDL flächendeckend mit Flachpinsel auf die
+       zu schützende Oberfläche auftragen. PU-Schaum geht in die Fuge,
+       nicht auf angrenzende Oberflächen. Merksatz: "Warum später
+       reinigen, wenn Du das vorher verhindern kannst?" PU-Schaum klebt
+       auch an Rahmen, Zargen und anderen Oberflächen – FRIDL schützt
+       genau diese Flächen.
+     2 PU-SCHAUM wie gewohnt verwenden. Der expandierende Schaum kann
+       sich sorgenfrei auf die vorbehandelte Oberfläche ausdehnen.
+     3 FRIDL-RÜCKSTÄNDE ENTFERNEN: überall an Fenster + Montage –
+       keine aufwendigen, schädigenden Arbeiten nötig. Holz: vor dem
+       Expandieren des PU-Schaums entfernen. -->
 <section class="block" id="anwendung">
   <div class="wrap">
     <div class="section-head reveal">
@@ -837,11 +897,15 @@
         <p>PU-Schaum entfernen? Besser gar nicht erst nötig machen.</p>
       </article>
     </div>
-    <p class="uses-more reveal">Außerdem im Trockenbau, in der SHK-Installation, im Formenbau – und als Abklebe-Alternative bei ausgewählten Sprühlacken.</p>
+    <p class="uses-more reveal">Außerdem im Trockenbau, im Formenbau – und als Abklebe-Alternative bei ausgewählten Sprühlacken.</p>
   </div>
 </section>
 
 <!-- ================= OBERFLÄCHEN ================= -->
+<!-- NOTIZ (25.09.2026) – offene Fragen zu dieser Sektion:
+     "Getestet / Prüfe usw." weglassen? Warum will der Kunde das
+     wissen? – Und: "Als Abkleber usw." (Fußnote Sprühlack) wirkt
+     verwirrend, komplett weglassen? -->
 <section class="block surfaces-sec" id="oberflaechen">
   <div class="wrap">
     <div class="section-head reveal">
@@ -865,27 +929,22 @@
 </section>
 
 <!-- ================= VORTEILE + BESCHREIBUNG ================= -->
+<!-- NOTIZ (25.09.2026) – offene Frage zu dieser Sektion:
+     "Warum FRIDL" – Wiederholung des oben Gesagten?
+     Der Produktbeschreibungs-Kasten ist am 25.09.2026 entfallen. -->
 <section class="block" id="vorteile" style="background:linear-gradient(180deg,#fff,var(--paper));">
   <div class="wrap benefits-grid">
     <div class="reveal">
       <span class="eyebrow">Deine Vorteile</span>
-      <h2 class="display" style="color:var(--navy);font-size:clamp(1.9rem,4vw,3rem);margin:.5rem 0 1.6rem;">Warum FRIDL?</h2>
+      <h2 class="display" style="color:var(--navy);font-size:clamp(2.4rem,5.2vw,4rem);margin:.5rem 0 1.6rem;">Warum FRIDL?</h2>
       <ul class="benefit-list">
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Spart Nacharbeit</b><small>PU-Schaum haftet nicht fest auf der vorbereiteten Fläche. Praxisbeispiel Fenstersanierung 80×100 cm: 4–5 Minuten Gesamtaufwand.</small></span></li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Schützt empfindliche Oberflächen</b><small>Kein Kratzen, keine aggressiven Reiniger.</small></span></li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Einfach zu entfernen</b><small>Nach dem Aushärten abheben, Rückstände mit dem nassen Schwamm abwischen.</small></span></li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Lösemittelfrei</b><small>Hautfreundlich, umweltfreundlich und materialschonend.</small></span></li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Made in Germany</b><small>Entwickelt und produziert in Deutschland.</small></span></li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Made in Germany</b><small>Entwickelt und produziert in der Lübecker Bucht.</small></span></li>
       </ul>
     </div>
-    <aside class="desc-card reveal">
-      <h3>Produktbeschreibung</h3>
-      <p>FRIDL PU-Schaum Antihaft ist ein speziell entwickeltes Trennmittel, das Anhaftungen durch PU-Schaum auf Holz, Metall, Kunststoff, Glas, Marmor, Stein und Keramik verhindert. Auch als Alternative zum Abkleben einsetzbar: Vor dem Sprühen aufgetragen, verhindert FRIDL, dass ausgewählte Sprühlacke an der behandelten Stelle anhaften.</p>
-      <p>Für Profis im Fensterbau, bei Tür- und Zargenmontage, im Innen- und Trockenbau – und für Heimwerker, die mit PU-Schaum arbeiten. Einfach mit dem Pinsel aufzutragen.</p>
-      <div class="maker">
-        <b>Inhalt:</b> 250 ml &nbsp;·&nbsp; Made in Germany
-      </div>
-    </aside>
   </div>
 </section>
 
@@ -898,7 +957,7 @@
       <p>Trag deine E-Mail-Adresse ein – wir melden uns, sobald du bestellen kannst, mit Liefertermin und Bezugsquelle.</p>
       <ul class="preorder-perks">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Unverbindlich &amp; kostenlos – keine Kaufverpflichtung</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Einführungspreis 19,95 € statt 24,95 €</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Einführungspreis <b class="perk-price">19,95 €</b> <s>24,95 €</s></span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Für Betriebe &amp; Händler: Sonderkonditionen auf Anfrage</li>
       </ul>
     </div>
@@ -975,7 +1034,7 @@
     <div class="buy-card reveal">
       <div>
         <h2 class="display">Schluss mit festgeklebtem PU-Schaum</h2>
-        <p>FRIDL erscheint in wenigen Wochen bei Amazon. Merk dich jetzt vor – du erfährst als Erste:r, wenn es losgeht.</p>
+        <p>FRIDL erscheint in wenigen Wochen bei Amazon.<br>Merk dich jetzt vor – du erfährst als Erste:r, wenn es losgeht.</p>
         <div class="buy-actions">
           <a href="#vormerken" class="btn btn-dark form-submit">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
@@ -989,6 +1048,21 @@
         <div class="big">19,95 € <span class="was-price">24,95 €</span></div>
         <div class="vat">inkl. MwSt. · zzgl. Versand</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MITREDEN / FEEDBACK ================= -->
+<section class="block feedback-sec" id="mitreden">
+  <div class="wrap">
+    <div class="feedback-card reveal">
+      <span class="eyebrow">Wir hören zu</span>
+      <h2 class="display">Wofür würdest du FRIDL einsetzen?</h2>
+      <p>FRIDL entsteht aus der Praxis – und wird dort weiterentwickelt. Schreib uns, wofür du es nutzen willst, was dir fehlt und was wir besser machen können. Jeder Hinweis hilft.</p>
+      <a class="btn btn-primary" href="mailto:service@fridl.shop?subject=Mein%20Einsatzbereich%20f%C3%BCr%20FRIDL">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="m4 6 8 6 8-6"/></svg>
+        service@fridl.shop
+      </a>
     </div>
   </div>
 </section>
