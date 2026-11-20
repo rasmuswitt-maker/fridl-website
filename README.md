@@ -146,8 +146,23 @@ Vor dem Verkaufsstart bereinigt, damit Seite, Etikett und Amazon-Listing dasselb
   offen und empfiehlt bei empfindlicher Haut Handschuhe.
 - **„rückstandslos entfernbar" → „wieder abnehmen".** Die eigene Anleitung sagt, dass Rückstände
   abgewischt werden müssen.
-- **Streichpreis `24,95 €` entfernt** (Hero, Perk-Liste, Kaufbox). § 11 PAngV verlangt bei einer
-  Preisermäßigung den niedrigsten Gesamtpreis der letzten 30 Tage — den gibt es vor dem ersten
-  Verkauf nicht, und die eigene UVP trägt als Vergleichspreis nicht, weil Hersteller und
-  Verkäufer dieselbe Gesellschaft sind. Der Einführungspreis 19,95 € bleibt als reiner Preis
-  stehen. Normalpreis ist 24,95 €, jeweils zzgl. Versand.
+- **Preisdarstellung:** Normalpreis 24,95 €, Einführungspreis 19,95 €, jeweils zzgl. Versand.
+  Der durchgestrichene 24,95 € steht auf ausdrückliche Entscheidung von Rasmus (20.11.2026) in
+  Hero, Perk-Liste und Kaufbox, damit der Einführungsrabatt erkennbar ist. Hinweis für später:
+  § 11 PAngV verlangt bei einer Preisermäßigung den niedrigsten Gesamtpreis der letzten 30 Tage;
+  vor dem ersten Verkauf gibt es diese Historie nicht. Sobald das Produkt eine Weile zu 24,95 €
+  verkauft wurde, ist die Darstellung unproblematisch.
+
+## Stand 20.11.2026: Textänderungen nach Rasmus
+
+- Trust-Bar, Sym-Buttons, Einsatzbereiche und Oberflächen-Unterzeile: **Hände & Werkzeug raus**.
+  Bewusst stehen geblieben sind die Vorteilskachel, Schritt 1 und die eigene FAQ.
+- **Sprühlack komplett raus**: Kachel, Sternchen-Fußnote, FAQ und der Nachsatz unter den
+  Einsatzbereichen.
+- Absatz 1 und 2 der Sym-Sektion neu formuliert (angrenzende und zu schützende Oberflächen;
+  „Mit FRIDL änderst du die Situation …").
+- Vergleich: „Flächendeckend mit einem Pinsel einstreichen" und „FRIDL-Rückstände abwischen".
+- Einsatzbereiche: Holz & Innenausbau „bevor mit PU-Schaum eingeschäumt wird", Heimwerken
+  „Nimm vorher FRIDL."
+- Vorteile: „4–5 Minuten Arbeitsaufwand" statt „Gesamtaufwand".
+- Produkt immer beim Namen: „Du trägst FRIDL auf" statt „es".
