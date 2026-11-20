@@ -124,3 +124,30 @@ Umbau nach dem Marketing-Feedback: Problem → Beweis → Lösung → Vormerken,
 Quelle: `FRIDL OptiTren Pro/RGB/Fridel_Logo.svg|png` (echter Vektor). `assets/logo-fridl.svg` = Original mit
 enger viewBox, `logo-fridl-white.svg` = Navy→Weiß (Orange bleibt), PNGs aus `Fridel_Logo.png` gecroppt,
 `favicon.svg` = „F" aus dem Logo + Schwung. Logo in der Kopfzeile 76 px (beim Scrollen 52 px), Footer 110 px.
+
+## Stand 22.10.2026: Formular im Mailto-Modus
+
+Wegen einer PHP-Sicherheitslücke (Hostinger lieferte nur 8.3.35 / 8.4.26 / 8.5.11) wurden
+`send-preorder.php`, `mail-config.php` und Hostingers `default.php` aus `public_html` entfernt;
+das Formular öffnet eine vorbefüllte E-Mail an service@fridl.shop.
+Zurück zum serverseitigen Versand, sobald eine gepatchte PHP-Version läuft (8.3.36 / 8.4.27 / 8.5.12):
+am `<form id="preorderForm">` wieder `data-endpoint="send-preorder.php"` setzen und
+`send-preorder.php` + `mail-config.php` (mit dem NEUEN Postfach-Passwort) hochladen.
+
+## Stand 20.11.2026: Werbeaussagen und Preisdarstellung
+
+Vor dem Verkaufsstart bereinigt, damit Seite, Etikett und Amazon-Listing dasselbe sagen:
+
+- **„umweltfreundlich" gestrichen.** Pauschale Umweltaussagen ohne Nachweis sind seit der
+  UWG-Novelle zur Richtlinie (EU) 2024/825 unlauter; das Produkt ist WGK 1 und enthält eine
+  Isothiazolinon-Konservierung.
+- **„hautfreundlich" und „sicher in der Anwendung" gestrichen.** Beides widerspricht dem eigenen
+  Etikett (H319, „Kann allergische Reaktionen hervorrufen"). Die FAQ nennt die Einstufung jetzt
+  offen und empfiehlt bei empfindlicher Haut Handschuhe.
+- **„rückstandslos entfernbar" → „wieder abnehmen".** Die eigene Anleitung sagt, dass Rückstände
+  abgewischt werden müssen.
+- **Streichpreis `24,95 €` entfernt** (Hero, Perk-Liste, Kaufbox). § 11 PAngV verlangt bei einer
+  Preisermäßigung den niedrigsten Gesamtpreis der letzten 30 Tage — den gibt es vor dem ersten
+  Verkauf nicht, und die eigene UVP trägt als Vergleichspreis nicht, weil Hersteller und
+  Verkäufer dieselbe Gesellschaft sind. Der Einführungspreis 19,95 € bleibt als reiner Preis
+  stehen. Normalpreis ist 24,95 €, jeweils zzgl. Versand.
