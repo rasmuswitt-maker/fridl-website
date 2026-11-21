@@ -362,10 +362,10 @@
   }
   .chip-with { background:var(--orange); }
   .chip-without { background:#3b4760; }
+  .proof-split { --split: 49.6%; }
   .proof-split .chip-with { top:.85rem; }
-  .proof-split .chip-without { top:52.5%; }
-  .proof-single .chip-with { top:.85rem; }
-  .proof-edge { position:absolute; top:49.6%; z-index:2; width:13%; border-top:2px solid var(--orange-2); opacity:.9; }
+  .proof-split .chip-without { top: calc(var(--split) + 3%); }
+  .proof-edge { position:absolute; top: var(--split); z-index:2; width:13%; border-top:2px solid var(--orange-2); opacity:.9; }
   .proof-edge.left { left:0; }
   .proof-edge.right { right:0; }
   .proof figcaption { margin-top:.9rem; font-size:.95rem; line-height:1.55; color:var(--muted); }
@@ -708,10 +708,12 @@
        Fussnote, FAQ und dem Nachsatz unter den Einsatzbereichen.
      - Beweisfotos (21.11.2026): vorher.png/nachher.png (nur 160x170 px,
        hochskaliert) ersetzt durch zwei echte Makroaufnahmen -
-       assets/fridl-grenze.jpg zeigt behandelt und unbehandelt auf EINER
-       Platte, die gelbe Linie ist die Grenze; assets/fridl-abgehoben.jpg
-       zeigt den abgehobenen PU-Schaum. Neue Klassen .proof-* statt .ba-*,
-       Bilder im Seitenverhaeltnis 3:4 und ohne Beschnitt.
+       beide zeigen behandelt und unbehandelt auf EINER Platte, getrennt
+       durch eine Linie: assets/fridl-grenze.jpg (gelbe Linie bei 49,6 %)
+       und assets/fridl-abgehoben.jpg (dunkle Linie bei 36,2 %). Die Hoehe
+       der Grenze steckt je Karte in der CSS-Variablen --split, daran
+       haengen Randmarkierungen und der Chip "Ohne FRIDL". Neue Klassen
+       .proof-* statt .ba-*, Bilder im Seitenverhaeltnis 3:4 ohne Beschnitt.
 
      NICHT AKUT / SPÄTER KLÄREN
      - Werbeinteresse wecken bei Würth, Fischer, Soudal?
@@ -869,16 +871,19 @@
           Unterhalb blieb derselbe Untergrund unbehandelt: Dort klebt der PU-Schaum fest und reißt
           beim Entfernen die Oberfläche mit heraus.</figcaption>
       </figure>
-      <figure class="proof proof-single reveal">
+      <figure class="proof proof-split reveal" style="--split:36.2%;">
         <div class="proof-media">
           <span class="proof-chip chip-with">Mit FRIDL</span>
+          <span class="proof-edge left"></span>
+          <span class="proof-edge right"></span>
+          <span class="proof-chip chip-without">Ohne FRIDL</span>
           <img src="assets/fridl-abgehoben.jpg" width="1072" height="1430" loading="lazy" decoding="async"
-               alt="Ausgehärteter PU-Schaum liegt lose auf einer mit FRIDL behandelten Platte, die Oberfläche darunter ist unbeschädigt." />
+               alt="Glatte Platte: oberhalb der Linie war FRIDL aufgetragen und die Fläche ist frei geblieben; unterhalb sitzt der ausgehärtete PU-Schaum auf dem unbehandelten Untergrund fest." />
         </div>
-        <figcaption><b>In einem Stück abgehoben.</b>
-          Der ausgehärtete PU-Schaum löst sich von der behandelten Fläche, ohne zu reißen.
-          Die Platte bleibt, wie sie war – zurück bleibt nur ein FRIDL-Rest, den du mit einem
-          nassen Schwamm abwischst.</figcaption>
+        <figcaption><b>Dieselbe Grenze auf glatter Platte.</b>
+          Auch hier trennt die Linie behandelt von unbehandelt: Oberhalb war FRIDL aufgetragen –
+          die Fläche ist frei geblieben. Unterhalb sitzt der ausgehärtete PU-Schaum fest auf dem
+          blanken Untergrund.</figcaption>
       </figure>
     </div>
   </div>
