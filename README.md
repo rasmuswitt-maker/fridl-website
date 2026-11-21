@@ -38,7 +38,8 @@ Grund).
 | `logo-fridl-white.png` | Weiße Variante als PNG, transparent (selbst generiert) |
 | `favicon-512.png` | Favicon als PNG 512 px (für Plattformen ohne SVG-Support) |
 | `produkt-dose.png` | Produktfoto (Dose), aus `FRIDL OptiTren Pro/Flyer Fridl 06 2026.pdf` gecroppt – Hero-Visual |
-| `vorher.png` / `nachher.png` | Vorher/Nachher-Fotos, ebenfalls aus dem Flyer gecroppt |
+| `fridl-grenze.jpg` | Beweisfoto 1 (21.11.2026): eine Platte, oben mit FRIDL behandelt, unterhalb der gelben Linie unbehandelt – dort klebt der PU-Schaum und reisst die Oberflaeche aus |
+| `fridl-abgehoben.jpg` | Beweisfoto 2 (21.11.2026): ausgehaerteter PU-Schaum, in einem Stueck von der behandelten Flaeche abgehoben |
 
 > Original-Logo-Paket (SVG-Trace, alle Formate) liegt in `FRIDL OptiTren Pro/Logos.zip`, falls die
 > Base64-Wrapper hier mal neu gebaut werden müssen. Es gibt dort auch ein `favicon.ico` – noch nicht
